@@ -61,6 +61,6 @@ MVP: 4/24
 
 ■　　画面遷移
 
-https://www.figma.com/file/ks9280BDkcYQmVqpAGgWLh/phonics_trainer?node-id=0%3A1&t=J500Gu32IVj8QAY0-1
+https://www.figma.com/file/ks9280BDkcYQmVqpAGgWLh/phonics_trainer?node-id=0%3A1&t=EUyt1NO3Qn6voRZM-1
 
 ![ER図](https://i.gyazo.com/e47f1a2d7ab58147192bcd0038b5e685.png)
