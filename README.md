@@ -63,4 +63,4 @@ MVP: 4/24
 
 https://www.figma.com/file/ks9280BDkcYQmVqpAGgWLh/phonics_trainer?node-id=0%3A1&t=EUyt1NO3Qn6voRZM-1
 
-![ER図](https://i.gyazo.com/11592365b1714c6cee597d18ebd2309e.png)
+![ER図](https://i.gyazo.com/1fabf9cd8e73267c00c004987af6d9f3.png)
