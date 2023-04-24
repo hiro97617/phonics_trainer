@@ -33,4 +33,3 @@ src/config/master.key
 src/app/assets/builds/*
 !src/app/assets/builds/.keep
 
-src/db/mysql_data
