@@ -33,3 +33,5 @@ src/config/master.key
 src/app/assets/builds/*
 !src/app/assets/builds/.keep
 
+src/db/development.sqlite3
+src/db/test.sqlite3
