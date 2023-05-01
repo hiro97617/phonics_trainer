@@ -13,7 +13,15 @@
 
   <body>
     <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+      <div id="nav">
+        <%= render 'shared/header' %>
+      </div>
+      <div>
+        <%= yield %>
+      </div>
+      <div>
+        <%= render 'shared/footer' %>
+      </div>
     </main>
   </body>
 </html>
