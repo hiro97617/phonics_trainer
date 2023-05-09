@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     volumes:
-    - ./src/tmp/db:/var/lib/postgresql/data
+    - postgres_volume:/var/lib/postgresql/data
     restart: always
   web:
     build: .
@@ -23,3 +23,5 @@ services:
     stdin_open: true
     depends_on:
       - db
+volumes:
+  postgres_volume:

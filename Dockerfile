@@ -1,4 +1,5 @@
-FROM ruby:3.1.2
+
+FROM ruby:3.0.1
 
 
 # Use the official Ruby image from Docker Hub
@@ -9,15 +10,15 @@ FROM ruby:3.1.2
 # Be sure to update the nodejs install command if the base image OS is updated.
 # [END cloudrun_rails_base_image]
 # Install vim editor in order to edit credential files.
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs vim
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev vim
 
 RUN (curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | apt-key add -) && \
     echo "deb https://deb.nodesource.com/node_14.x buster main"      > /etc/apt/sources.list.d/nodesource.list && \
     apt-get update && apt-get install -y nodejs lsb-release
 
-RUN (curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -) && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update && apt-get install -y yarn
+RUN wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo 'deb http://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list
+RUN set -x && apt-get update -y -qq && apt-get install -yq yarn
 
 
 WORKDIR /app
@@ -31,6 +32,7 @@ RUN gem install bundler && \
     #bundle config set --local deployment 'true' && \
     #bundle config set --local without 'development test' && \
     bundle config --local set path 'vendor/bundle' && \
+    bundle config set --global force_ruby_platform true && \
     bundle install
 
 # Copy application code to the container image
@@ -47,12 +49,8 @@ RUN gem install bundler && \
 # [END cloudrun_rails_dockerfile_key]
 
 # pre-compile Rails assets with master key
-#RUN bundle config unset deployment && \
-#    bundle lock --add-platform x86_64-linux && \
-#    bundle config set --local deployment 'true' && \
-#    bundle config set --local without 'development test' && \
-#    bundle install && \
-#    bundle exec rake assets:precompile
+#RUN bundle exec rails dartsass:build && \
+#    bundle exec rails assets:precompile
 
 #EXPOSE 8080
 #CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "8080"]
