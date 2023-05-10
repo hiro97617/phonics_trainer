@@ -23,8 +23,8 @@ steps:
 substitutions:
   _REGION: asia-northeast1
   _SERVICE_NAME: phonics-trainer
-  _INSTANCE_NAME: phonics_trainer
-  _SECRET_NAME: rails-master-key
+  _INSTANCE_NAME: phonics-training
+  _SECRET_NAME: rails-master-key-for-phonics-training
 
 availableSecrets:
   secretManager:
