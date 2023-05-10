@@ -20,13 +20,14 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  user: postgres
-  password: password
-  host: db
+
 
 development:
   <<: *default
   database: app_development
+  user: postgres
+  password: password
+  host: db
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,6 +62,9 @@ development:
 test:
   <<: *default
   database: app_test
+  user: postgres
+  password: password
+  host: db
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,6 +88,7 @@ test:
 #
 production:
   <<: *default
-  database: app_production
-  username: app
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.gcp[:production_db_name] %>
+  username: <%= Rails.application.credentials.gcp[:production_db_username] %>
+  password: <%= Rails.application.credentials.gcp[:db_password] %>
+  host: <%= ENV.fetch("DB_SOCKET_DIR") { '/cloudsql' } %>/<%= Rails.application.credentials.gcp[:cloud_sql_connection_name] %>

@@ -49,8 +49,7 @@ ENV RAILS_MASTER_KEY=${MASTER_KEY}
 # [END cloudrun_rails_dockerfile_key]
 
 # pre-compile Rails assets with master key
-RUN bundle exec rails dartsass:build && \
-    bundle exec rails assets:precompile
+RUN bundle exec rails assets:precompile
 
 EXPOSE 8080
 CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "8080"]
