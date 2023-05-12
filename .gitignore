@@ -37,3 +37,4 @@ src/node_modules
 
 src/db/development.sqlite3
 src/db/test.sqlite3
+src/public/packs
