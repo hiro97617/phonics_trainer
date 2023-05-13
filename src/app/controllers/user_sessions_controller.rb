@@ -1,9 +1,8 @@
 class UserSessionsController < ApplicationController
   skip_before_action :require_login
-  before_action :after_login
+  before_action :move_to_dashboard, only: %i[new create]
 
-  def new
-  end
+  def new; end
 
   def create
     @user = login(params[:email], params[:password])

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     redirect_to login_path, alert: "ログインをしてください"
   end
 
-  def after_login
+  def move_to_dashboard
     redirect_to dashboard_path if logged_in?
   end
 end
