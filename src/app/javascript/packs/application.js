@@ -10,6 +10,7 @@ import "channels"
 import "stylesheets/application.css"
 import "./dashboard.js"
 import "./admin.js"
+import "./header.js"
 
 Rails.start()
 Turbolinks.start()

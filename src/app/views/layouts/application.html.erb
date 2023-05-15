@@ -9,15 +9,27 @@
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'  %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .gradient {
+        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+      }
+    </style>
   </head>
 
-  <body>
-    <% if logged_in? %>
-      <%= render 'shared/after_login_header' %>
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-    <% end %>
+  <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+  <% if logged_in? %>
+    <%= render 'shared/after_login_header' %>
+  <% else %>
+    <%= render 'shared/before_login_header' %>
+  <% end %>
+  <div class = "mt-20 content-wrapper" >
+    <div>
+      <%= render 'shared/flash_messages' %>
+    </div>
     <%= yield %>
+  </div>
+  <div class = "wrapper">
     <%= render 'shared/footer' %>
+  </div>
   </body>
 </html>
