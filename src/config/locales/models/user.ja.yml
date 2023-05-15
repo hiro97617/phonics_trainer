@@ -1,0 +1,6 @@
+ja:
+  enums:
+    user:
+      role:
+        general: '一般'
+        admin: '管理'
