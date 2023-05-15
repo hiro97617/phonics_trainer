@@ -5,11 +5,11 @@ class Admin::BaseController < ApplicationController
   private
 
   def not_authenticated
-    redirect_to admin_login_path
+    redirect_to admin_login_path, warning: 'ログアウトしました'
   end
 
   def check_admin
-    redirect_to root_path unless current_user.admin?
+    redirect_to root_path unless current_user.admin?, warning: '管理者ログインしてください'
   end
 
 end
