@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'dashboards#index'
-    resources :users, only: %i[index show edit update destroy]
+    resources :users, only: %i[index edit update destroy]
     resources :dashboards, only: %i[index]
     get 'login', to: 'user_sessions#new', as: 'login'
     post 'login', to: 'user_sessions#create'

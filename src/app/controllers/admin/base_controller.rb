@@ -9,7 +9,7 @@ class Admin::BaseController < ApplicationController
   end
 
   def check_admin
-    redirect_to root_path unless current_user.admin?, warning: '管理者ログインしてください'
+    redirect_to root_path unless current_user.admin?
   end
 
 end
