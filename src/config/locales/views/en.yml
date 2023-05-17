@@ -1,0 +1,42 @@
+en:
+  defaults:
+    service_name: 'PhonicsTrainer'
+    explanation: 'PhonicsTrainerとは'
+    lang_selection: '言語選択'
+    login: 'Login'
+    register: 'Register'
+    logout: 'Logout'
+    message:
+      please_login: "Please login"
+      created: "%{item} was successfully created"
+      not_created: "Couldn't create %{item}"
+      delete_confirm: "Are you sure？"
+      update: "%{item} was successfully updated!"
+      not_update: "Failed to update %{item}"
+      reset_password: 'Regarding resetting password'
+      not_authorized: 'You are not authorized'
+    helpers:
+      submit:
+        create: "create!"
+        update: "Update!"
+  users:
+    new:
+      title: 'New User'
+      to_login_page: 'Login Page'
+  user_sessions:
+    new:
+      title: 'Login'
+      to_register_page: 'Create User'
+      password_forget: 'Forgot Password?'
+  admin:
+    users:
+      index:
+        title: 'User Index'
+    user_sessions:
+      new:
+        title: 'Login'
+      create:
+        success: 'Logged in!!'
+        fail: 'Failed to log in'
+      destroy:
+        success: 'Logged out!!'
