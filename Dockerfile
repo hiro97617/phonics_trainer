@@ -37,19 +37,19 @@ RUN gem install bundler && \
 
 # Copy application code to the container image
 #以下のコマンドは本番環境実行時に行う。
-#COPY ./src /app
+COPY ./src /app
 
-#ENV RAILS_ENV=production
-#ENV RAILS_SERVE_STATIC_FILES=true
+ENV RAILS_ENV=production
+ENV RAILS_SERVE_STATIC_FILES=true
 # Redirect Rails log to STDOUT for Cloud Run to capture
-#ENV RAILS_LOG_TO_STDOUT=true
-# [START cloudrun_rails_dockerfile_key]
-#ARG MASTER_KEY
-#ENV RAILS_MASTER_KEY=${MASTER_KEY}
-# [END cloudrun_rails_dockerfile_key]
+ENV RAILS_LOG_TO_STDOUT=true
+#[START cloudrun_rails_dockerfile_key]
+ARG MASTER_KEY
+ENV RAILS_MASTER_KEY=${MASTER_KEY}
+#[END cloudrun_rails_dockerfile_key]
 
 # pre-compile Rails assets with master key
-#RUN bundle exec rails assets:precompile
+RUN bundle exec rails assets:precompile
 
-#EXPOSE 8080
-#CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "8080"]
+EXPOSE 8080
+CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "8080"]
