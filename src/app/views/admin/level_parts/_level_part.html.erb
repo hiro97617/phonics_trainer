@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= level_part.level %>
+  </td>
+  <td>
+    <%= level_part.part %>
+  </td>
+  <td>
+    <%= link_to t('defaults.edit'), edit_admin_level_part_path(level_part), class: 'btn btn-success' %>
+    <%= link_to t('defaults.delete'), admin_level_part_path(level_part), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger' %>
+  </td>
+</tr>

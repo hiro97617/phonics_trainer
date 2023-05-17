@@ -17,7 +17,7 @@ module App
     # in config/environments, which are processed later.
     #
     config.time_zone = "Tokyo"
-    config.i18n.load_path += Dir[Rails.root.join('src','config','locales','**','*.{rb,yml}').to_s].sort
+    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
     config.i18n.available_locales = %i[ja en]
     config.i18n.default_locale = :ja
 
