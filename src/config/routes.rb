@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'dashboard', to: 'dashboards#top'
   get 'login', to: 'user_sessions#new', as: 'login'
   post 'login', to: 'user_sessions#create'
@@ -11,6 +12,10 @@ Rails.application.routes.draw do
     root to: 'dashboards#index'
     resources :users, only: %i[index edit update destroy]
     resources :level_parts, only: %i[index new create edit update destroy]
+    resources :level_parts, only: %i[show] do
+      resources :multiple_choice_questions, only: %i[new create]
+    end
+    resources :multiple_choice_questions, only: %i[index show edit update destroy]
     resources :tags, only: %i[index new create edit update destroy]
     resources :dashboards, only: %i[index]
     get 'login', to: 'user_sessions#new', as: 'login'

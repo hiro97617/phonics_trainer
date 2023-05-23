@@ -1,0 +1,23 @@
+<tr>
+  <% binding.pry %>
+  <td>
+    <%= multiple_choice_question.body %>
+  </td>
+  <td>
+    <%= multiple_choice_question.multiple_choices.body %>
+  </td>
+  <td>
+    <%= multiple_choice_question.multiple_choices.body %>
+  </td>
+  <td>
+    <%= multiple_choice_question.level_part.level %>
+  </td>
+  <td>
+    <%= multiple_choice_question.level_part.part %>
+  </td>
+  <td>
+    <%= link_to t('defaults.show'), admin_multiple_choice_questions_path(multiple_choice_question), class: 'btn btn-success' %>
+    <%= link_to t('defaults.edit'), edit_admin_multiple_choice_question_path(multiple_choice_question), class: 'btn btn-success' %>
+    <%= link_to t('defaults.delete'), admin_multiple_choice_question_path(multiple_choice_question), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger' %>
+  </td>
+</tr>

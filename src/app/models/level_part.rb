@@ -1,4 +1,5 @@
 class LevelPart < ApplicationRecord
+has_many :multiple_choice_questions, dependent: :destroy
 
   validates :level, presence: true
   validates :part, presence: true

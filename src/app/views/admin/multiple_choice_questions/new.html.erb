@@ -1,0 +1,37 @@
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create Multiple Choice Question</h2>
+  </div>
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <%= form_with model: @register_multiple_choice_question_form, url: admin_level_part_multiple_choice_questions_path, local: true do |f| %>
+      <%= render 'shared/error_messages', object: @register_multiple_choice_question_form %>
+      <div>
+        <%= f.label :multiple_choice_question_body, class:"block text-sm font-medium leading-6 text-gray-900" %>
+        <div class="mt-2">
+          <%= f.text_field :multiple_choice_question_body, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :correct_choice %>
+        <div class="mt-2">
+          <%= f.text_field :correct_choice, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+        </div>
+      <div>
+      <div>
+        <%= f.label :incorrect_choice_1 %>
+        <div class="mt-2">
+          <%= f.text_field :incorrect_choice_1, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :incorrect_choice_2 %>
+        <div class="mt-2">
+          <%= f.text_field :incorrect_choice_2, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+        </div>
+      </div>
+      <div class="mt-2">
+        <%= f.submit class:"flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"%>
+      </div>
+    <% end %>
+  </div>
+</div>

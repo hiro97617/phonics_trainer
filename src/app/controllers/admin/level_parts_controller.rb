@@ -1,5 +1,5 @@
 class Admin::LevelPartsController < Admin::BaseController
-  before_action :check_level_parts, only: %i[edit update destroy]
+  before_action :check_level_parts, only: %i[show edit update destroy]
 
   def index
     @level_parts = LevelPart.all
@@ -17,6 +17,8 @@ class Admin::LevelPartsController < Admin::BaseController
       render :new
     end
   end
+
+  def show; end
 
   def edit; end
 
