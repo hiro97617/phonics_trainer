@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_21_133107) do
+ActiveRecord::Schema.define(version: 2023_05_24_010002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2023_05_21_133107) do
   end
 
   create_table "multiple_choices", force: :cascade do |t|
-    t.boolean "is_answer", null: false
+    t.boolean "is_answer", default: false, null: false
     t.string "body", null: false
     t.bigint "multiple_choice_question_id", null: false
     t.datetime "created_at", precision: 6, null: false

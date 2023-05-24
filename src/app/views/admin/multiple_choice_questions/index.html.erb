@@ -20,16 +20,9 @@
           </tr>
         </thead>
         <tbody>
-          <%= render @multiple_choice_questions %>
+          <%= render @multiple_choice_questions, multiple_choice_question: @multiple_choice_question %>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
-<%= link_to  %>
-<% if @multiple_choice_questions.present? %>
-  <%= render  @multiple_choice_questions %>
-<% else %>
-  <p> '問題はまだありません'</p>
-<% end %>
