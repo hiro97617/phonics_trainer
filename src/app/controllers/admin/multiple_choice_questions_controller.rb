@@ -1,5 +1,5 @@
 class Admin::MultipleChoiceQuestionsController < Admin::BaseController
-  before_action :check_multiple_choice_questions, only: %i[edit update show destory]
+  before_action :check_multiple_choice_question, only: %i[show edit update destroy]
 
   def index
   @multiple_choice_questions = MultipleChoiceQuestion.all
@@ -33,7 +33,7 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
   end
 
   def destroy
-    @multiple_choice_question.destroy
+    @multiple_choice_question.destroy!
     redirect_to admin_multiple_choice_questions_path
   end
 
@@ -46,11 +46,7 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
       :incorrect_choice_1, :incorrect_choice_2, :level_part_id)
   end
 
-  def multiple_choice_questions_params
-    params.require(:multiple_choice_question).permit(:body).merge(level_part_id: params[:level_part_id])
-  end
-
-  def check_multiple_choice_questions
+  def check_multiple_choice_question
     @multiple_choice_question = MultipleChoiceQuestion.find(params[:id])
   end
 end

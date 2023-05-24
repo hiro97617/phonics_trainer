@@ -28,7 +28,7 @@ class Admin::MultipleChoicesController < Admin::BaseController
   end
 
 
-  def check_multiple_choice_questions
+  def check_multiple_choice
     @multiple_choice = MultipleChoice.find(params[:id])
   end
 end

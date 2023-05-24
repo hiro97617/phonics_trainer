@@ -21,18 +21,18 @@ class RegisterMultipleChoiceQuestionForm
     return false unless valid?
     multiple_choice_question = MultipleChoiceQuestion.new(body: multiple_choice_question_body, level_part_id: level_part_id)
     multiple_choice_question.save # 問題文の登録
-    binding.pry
 
     multiple_choice = multiple_choice_question.multiple_choices.build(body: correct_choice, is_answer: true)
-    binding.pry
     multiple_choice.save # 正解選択肢の保存
-    binding.pry
 
-    first = multiple_choice_question.multiple_choices.build(body: incorrect_choice_1, is_answer: false)
+    first = multiple_choice_question.multiple_choices.build(body: incorrect_choice_1)
     binding.pry
     first.save
     binding.pry
-    second = multiple_choice_question.multiple_choices.build(body: incorrect_choice_2, is_answer: false) && second.save unless incorrect_choice_2.nil?
+    unless incorrect_choice_2.nil?
+      second = multiple_choice_question.multiple_choices.build(body: incorrect_choice_2)
+      second.save
+    end
     binding.pry
     # 不正解選択肢の登録
   end
