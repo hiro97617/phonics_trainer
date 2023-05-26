@@ -3,7 +3,7 @@
     <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create Multiple Choice Question</h2>
   </div>
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <%= form_with model: @register_multiple_choice_question_form, url: admin_level_part_multiple_choice_questions_path, multipart: true, local: true do |f| %>
+    <%= form_with model: @register_multiple_choice_question_form, url: admin_level_part_multiple_choice_question_path(@register_multiple_choice_question_form), local: true do |f| %>
       <%= render 'shared/error_messages', object: @register_multiple_choice_question_form %>
       <div>
         <%= f.label :multiple_choice_question_body, class:"block text-sm font-medium leading-6 text-gray-900" %>
@@ -15,21 +15,42 @@
         <%= f.label :correct_choice %>
         <div class="mt-2">
           <%= f.text_field :correct_choice, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
-          <%= f.file_field :image_for_correct_choice %>
+          <% if @register_multiple_choice_question_form.image[0].attached? %>
+            <%= image_tag @register_multiple_choice_question_form.image %>
+          <% else %>
+            <%= f.file_field :image_for_correct_choice %>
+          <% end %>
+          <% if @register_multiple_choice_question_form.image[0].attached? %>
+            <%= f.check_box :remove_image %>
+          <% end %>
         </div>
       <div>
       <div>
         <%= f.label :incorrect_choice_1 %>
         <div class="mt-2">
           <%= f.text_field :incorrect_choice_1, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
-          <%= f.file_field :image_for_incorrect_choice_1 %>
+          <% if @register_multiple_choice_question_form.image[1].attached? %>
+            <%= image_tag @register_multiple_choice_question_form.image %>
+          <% else %>
+            <%= f.file_field :image_for_correct_choice %>
+          <% end %>
+          <% if @register_multiple_choice_question_form.image[1].attached? %>
+            <%= f.check_box :remove_image %>
+          <% end %>
         </div>
       </div>
       <div>
         <%= f.label :incorrect_choice_2 %>
         <div class="mt-2">
           <%= f.text_field :incorrect_choice_2, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
-          <%= f.file_field :image_for_incorrect_choice_2 %>
+          <% if @register_multiple_choice_question_form.image[2].attached? %>
+            <%= image_tag @register_multiple_choice_question_form.image %>
+          <% else %>
+            <%= f.file_field :image_for_correct_choice %>
+          <% end %>
+          <% if @register_multiple_choice_question_form.image[2].attached? %>
+            <%= f.check_box :remove_image %>
+          <% end %>
         </div>
       </div>
       <div class="mt-2">

@@ -24,7 +24,9 @@ class Admin::MultipleChoicesController < Admin::BaseController
   private
 
   def multiple_choice_questions_params
-    params(:multiple_choice_question).
+    params.require(:register_multiple_choice_question_form).permit(
+      :multiple_choice_question_body, :correct_choice,
+      :incorrect_choice_1, :incorrect_choice_2, :level_part_id)
   end
 
 

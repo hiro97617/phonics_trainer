@@ -9,7 +9,9 @@ class RegisterMultipleChoiceQuestionForm
   attribute :correct_choice, :string
   attribute :incorrect_choice_1, :string
   attribute :incorrect_choice_2, :string
-  attribute :incorrect_choice_3, :string
+  attribute :image_for_correct_choice, :string
+  attribute :image_for_incorrect_choice_1, :string
+  attribute :image_for_incorrect_choice_2, :string
 
   validates :multiple_choice_question_body, presence: true, length: { maximum: 140 }
   validates :correct_choice, presence: true, length: { maximum: 40 }
@@ -22,15 +24,18 @@ class RegisterMultipleChoiceQuestionForm
     multiple_choice_question = MultipleChoiceQuestion.new(body: multiple_choice_question_body, level_part_id: level_part_id)
     multiple_choice_question.save # 問題文の登録
 
-    multiple_choice = multiple_choice_question.multiple_choices.build(body: correct_choice, is_answer: true)
+    multiple_choice = multiple_choice_question.multiple_choices.build(body: correct_choice, image: image_for_correct_choice, is_answer: true)
+    multiple_choice.image.attach(image_for_correct_choice) if image_for_correct_choice.present?
     multiple_choice.save # 正解選択肢の保存
 
-    first = multiple_choice_question.multiple_choices.build(body: incorrect_choice_1)
+    first = multiple_choice_question.multiple_choices.build(body: incorrect_choice_1, image: image_for_incorrect_choice_1)
+    multiple_choice.image.attach(image_for_incorrect_choice_1) if image_for_incorrect_choice_1.present?
     binding.pry
     first.save
     binding.pry
     unless incorrect_choice_2.nil?
-      second = multiple_choice_question.multiple_choices.build(body: incorrect_choice_2)
+      second = multiple_choice_question.multiple_choices.build(body: incorrect_choice_2, image: image_for_incorrect_choice_2)
+      multiple_choice.image.attach(image_for_incorrect_choice_2) if image_for_incorrect_choice_2.present?
       second.save
     end
     binding.pry
