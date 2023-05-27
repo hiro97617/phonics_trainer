@@ -15,21 +15,24 @@
         <%= f.label :correct_choice %>
         <div class="mt-2">
           <%= f.text_field :correct_choice, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
-          <%= f.file_field :image_for_correct_choice %>
+          <%= f.file_field :image_for_correct_choice, onchange: 'previewImage()', accept: 'images/*', class: "mb-3" %>
+          <%= f.hidden_field :image_for_correct_choice_cache %>
         </div>
       <div>
       <div>
         <%= f.label :incorrect_choice_1 %>
         <div class="mt-2">
           <%= f.text_field :incorrect_choice_1, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
-          <%= f.file_field :image_for_incorrect_choice_1 %>
+          <%= f.file_field :image_for_incorrect_choice_1, onchange: 'previewImage()', accept: 'images/*', class: "mb-3" %>
+          <%= f.hidden_field :image_for_incorrect_choice_1_cache %>
         </div>
       </div>
       <div>
         <%= f.label :incorrect_choice_2 %>
         <div class="mt-2">
           <%= f.text_field :incorrect_choice_2, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
-          <%= f.file_field :image_for_incorrect_choice_2 %>
+          <%= f.file_field :image_for_incorrect_choice_2, onchange: 'previewImage()', accept: 'images/*', class: "mb-3" %>
+          <%= f.hidden_field :image_for_incorrect_choice_2_cache %>
         </div>
       </div>
       <div class="mt-2">
