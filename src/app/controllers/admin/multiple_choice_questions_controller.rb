@@ -11,11 +11,16 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
   end
 
   def create
+    binding.pry
     @register_multiple_choice_question_form = RegisterMultipleChoiceQuestionForm.new(create_multiple_choice_question_params)
+    binding.pry
     @register_multiple_choice_question_form.level_part_id = params[:level_part_id]
+    binding.pry
     if @register_multiple_choice_question_form.save
+      binding.pry
       redirect_to admin_multiple_choice_questions_path
     else
+      binding.pry
       render :new
     end
   end
@@ -43,7 +48,8 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
   def create_multiple_choice_question_params
     params.require(:register_multiple_choice_question_form).permit(
       :multiple_choice_question_body, :correct_choice, :incorrect_choice_1, :incorrect_choice_2,
-      :level_part_id, :image_for_correct_choice, :image_for_incorrect_choice_1, :image_for_incorrect_choice_2)
+      :level_part_id, :image_for_correct_choice, :image_for_correct_choice_cache, :image_for_incorrect_choice_1,
+      :image_for_incorrect_choice_1_cache, :image_for_incorrect_choice_2, :image_for_incorrect_choice_2_cache)
   end
 
   def check_multiple_choice_question

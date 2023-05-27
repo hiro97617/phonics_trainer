@@ -1,8 +1,7 @@
-
   <% flash.each do |message_type, message| %>
     <div class="alert-<%= message_type %>">
-      <p class="font-bold"><%= message_type %></p>
-      <p><%= message %>
+      <p class="font-bold text-3xl"><%= message_type %></p>
+      <p class="text-xl"><%= message %>
     </div>
   <% end %>
 

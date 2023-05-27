@@ -26,6 +26,7 @@ src/tmp/storage/*
 !src/tmp/storage/.keep
 
 src/public/assets
+src/public/uploads
 
 # Ignore master key for decrypting credentials and more.
 src/config/master.key
