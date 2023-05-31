@@ -1,8 +1,13 @@
 class Admin::MultipleChoiceQuestionsController < Admin::BaseController
   before_action :check_multiple_choice_question, only: %i[show edit update destroy]
 
+  def top
+    @level_parts = LevelPart.all
+  end
+
   def index
-  @multiple_choice_questions = MultipleChoiceQuestion.all
+    @level_part = LevelPart.find(params[:level_part_id])
+    @multiple_choice_questions = @level_part.multiple_choice_questions.include(:level_part)
   end
 
   def new
@@ -11,16 +16,11 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
   end
 
   def create
-    binding.pry
     @register_multiple_choice_question_form = RegisterMultipleChoiceQuestionForm.new(create_multiple_choice_question_params)
-    binding.pry
     @register_multiple_choice_question_form.level_part_id = params[:level_part_id]
-    binding.pry
     if @register_multiple_choice_question_form.save
-      binding.pry
       redirect_to admin_multiple_choice_questions_path
     else
-      binding.pry
       render :new
     end
   end

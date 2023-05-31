@@ -7,15 +7,19 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy', as: 'logout'
   root to: 'home#top'
   resources :users, only: %i[new create]
+  resources :level_parts, only: %i[show] do
+    resources :multiple_choice_questions, only: %i[index]
+  end
 
   namespace :admin do
     root to: 'dashboards#index'
     resources :users, only: %i[index edit update destroy]
     resources :level_parts, only: %i[index new create edit update destroy]
     resources :level_parts, only: %i[show] do
-      resources :multiple_choice_questions, only: %i[new create]
+      resources :multiple_choice_questions, only: %i[index new create]
     end
-    resources :multiple_choice_questions, only: %i[index show edit update destroy]
+    get 'multiple_choice_questions/top', to: 'multiple_choice_questions#top', as: 'multiple_choice_top'
+    resources :multiple_choice_questions, only: %i[show edit update destroy]
     resources :tags, only: %i[index new create edit update destroy]
     resources :dashboards, only: %i[index]
     get 'login', to: 'user_sessions#new', as: 'login'
