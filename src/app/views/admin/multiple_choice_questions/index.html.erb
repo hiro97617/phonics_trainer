@@ -1,3 +1,5 @@
+
+
 <div class="bg-gray-800 pt-3">
   <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
       <h1 class="font-bold pl-2">Multiple Choice Questions</h1>
@@ -8,21 +10,25 @@
     <div class="col-md-12 border-b p-3 m-8">
     </div>
     <div class="p-5 m-8">
-      <table class="w-full p-5 text-gray-700">
-        <thead>
-          <tr>
-            <th scope="col" class="text-left text-blue-900">Body</th>
-            <th scope="col" class="text-left text-blue-900">Correct Body</th>
-            <th scope="col" class="text-left text-blue-900">Incorrext Body</th>
-            <th scope="col" class="text-left text-blue-900">Level</th>
-            <th scope="col" class="text-left text-blue-900">Part</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render @multiple_choice_questions, multiple_choice_question: @multiple_choice_question %>
-        </tbody>
-      </table>
+      <% if @multiple_choice_question.present? %>
+        <table class="w-full p-5 text-gray-700">
+          <thead>
+            <tr>
+              <th scope="col" class="text-left text-blue-900">Body</th>
+              <th scope="col" class="text-left text-blue-900">Correct Body</th>
+              <th scope="col" class="text-left text-blue-900">Incorrext Body</th>
+              <th scope="col" class="text-left text-blue-900">Level</th>
+              <th scope="col" class="text-left text-blue-900">Part</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @multiple_choice_questions, multiple_choice_question: @multiple_choice_question %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>まだ問題はありません</p>
+      <% end %>
     </div>
   </div>
 </div>
