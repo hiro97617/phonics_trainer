@@ -8,6 +8,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
     "autoprefixer": "^10.4.14",
+    "jquery": "^3.7.0",
     "postcss": "^8.4.23",
     "postcss-loader": "4",
     "tailwindcss": "^3.3.2",

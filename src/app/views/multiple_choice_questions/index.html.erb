@@ -1,0 +1,5 @@
+<div class="py-16 bg-white">
+  <p class="text-4xl text-center">Level-Part: <%=@level_part.level%> - <%=@level_part.part%> </p>
+  <%= render @multiple_choice_questions %>
+  <%= link_to "終わる！＆結果表示！", level_part_finish_path, method: :post, id:"multiple-choice-result", remote: true, class: "px-4 py-2 rounded-md text-sm font-medium border shadow focus:outline-none focus:ring transition text-yellow-600 bg-yellow-50 border-yellow-200 hover:bg-yellow-100 active:bg-yellow-200 focus:ring-yellow-300" %>
+</div>
