@@ -86,9 +86,4 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  database: <%= Rails.application.credentials.gcp[:production_db_name] %>
-  username: <%= Rails.application.credentials.gcp[:production_db_username] %>
-  password: <%= Rails.application.credentials.gcp[:db_password] %>
-  host: <%= ENV.fetch("DB_SOCKET_DIR") { '/cloudsql' } %>/<%= Rails.application.credentials.gcp[:cloud_sql_connection_name] %>
+
