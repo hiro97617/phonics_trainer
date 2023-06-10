@@ -1,0 +1,2 @@
+module MultipleChoiceQuestionsHelper
+end

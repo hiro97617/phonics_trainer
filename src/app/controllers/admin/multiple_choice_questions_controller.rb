@@ -7,7 +7,7 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
 
   def index
     @level_part = LevelPart.find(params[:level_part_id])
-    @multiple_choice_questions = @level_part.multiple_choice_questions.include(:level_part)
+    @multiple_choice_questions = @level_part.multiple_choice_questions.includes(:level_part)
   end
 
   def new
@@ -18,8 +18,9 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
   def create
     @register_multiple_choice_question_form = RegisterMultipleChoiceQuestionForm.new(create_multiple_choice_question_params)
     @register_multiple_choice_question_form.level_part_id = params[:level_part_id]
+    @level_part = LevelPart.find(params[:level_part_id])
     if @register_multiple_choice_question_form.save
-      redirect_to admin_multiple_choice_questions_path
+      redirect_to admin_level_part_multiple_choice_questions_path(@level_part)
     else
       render :new
     end

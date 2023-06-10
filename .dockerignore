@@ -6,18 +6,21 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
-
+/.git/
+/.git*
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
 
 /public/assets
 
+/node_modules/
+/src/vendor/bundle/
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+*/config/master.key
+*/*/config/master.key
