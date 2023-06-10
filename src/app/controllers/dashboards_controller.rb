@@ -1,4 +1,5 @@
 class DashboardsController < ApplicationController
 
-  def top; end
+  def top
+  end
 end

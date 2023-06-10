@@ -21,10 +21,10 @@ steps:
     secretEnv: ["RAILS_KEY"]
 
 substitutions:
-  _REGION: us-central1
+  _REGION: asia-northeast1
   _SERVICE_NAME: phonics-trainer
-  _INSTANCE_NAME: phonics-trainer
-  _SECRET_NAME: rails-master-key
+  _INSTANCE_NAME: phonics-training
+  _SECRET_NAME: rails-master-key-for-phonics-training
 
 availableSecrets:
   secretManager:

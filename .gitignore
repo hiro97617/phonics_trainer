@@ -30,7 +30,7 @@ src/public/uploads
 
 # Ignore master key for decrypting credentials and more.
 src/config/master.key
-src/config/text-to-sppech-test-388502-cde4e31e1861.json
+
 src/app/assets/builds/*
 !src/app/assets/builds/.keep
 
