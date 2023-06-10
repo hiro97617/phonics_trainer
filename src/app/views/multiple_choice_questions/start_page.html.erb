@@ -1,0 +1,4 @@
+<%= form_with url: level_part_multiple_choice_start_path, method: :post, local: true do |f| %>
+  <%= f.submit "スタート!!", class: "px-4 py-2 rounded-md text-sm font-medium border shadow focus:outline-none focus:ring transition text-green-600 bg-green-50 border-green-200 hover:bg-green-100 active:bg-green-200 focus:ring-green-300" %>
+<% end %>
+<%= link_to "一覧に戻る", multiple_choice_questions_path %>

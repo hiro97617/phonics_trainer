@@ -1,0 +1,8 @@
+<div class="bg-gray-800 pt-3">
+  <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
+      <h1 class="font-bold pl-2">Multiple Choice Questions</h1>
+  </div>
+</div>
+<% @level_parts.each do |level_part| %>
+  <%= link_to "#{level_part.level}-#{level_part.part}", admin_level_part_multiple_choice_questions_path(level_part) %>
+<% end %>

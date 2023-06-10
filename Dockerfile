@@ -48,7 +48,7 @@ RUN gem install bundler && \
 #ENV RAILS_MASTER_KEY=${MASTER_KEY}
 #[END cloudrun_rails_dockerfile_key]
 
-# pre-compile Rails assets with master key
+#pre-compile Rails assets with master key
 #RUN bundle exec rails assets:precompile
 
 #EXPOSE 8080

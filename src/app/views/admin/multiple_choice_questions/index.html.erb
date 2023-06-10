@@ -1,5 +1,3 @@
-
-
 <div class="bg-gray-800 pt-3">
   <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
       <h1 class="font-bold pl-2">Multiple Choice Questions</h1>
@@ -8,9 +6,10 @@
 <div class="w-full p-3">
   <div class="bg-white border rounded shadow">
     <div class="col-md-12 border-b p-3 m-8">
+      <%= link_to "問題の新規作成へ", new_admin_level_part_multiple_choice_question_path %>
     </div>
     <div class="p-5 m-8">
-      <% if @multiple_choice_question.present? %>
+      <% if @multiple_choice_questions.present? %>
         <table class="w-full p-5 text-gray-700">
           <thead>
             <tr>
