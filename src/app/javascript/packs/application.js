@@ -15,3 +15,5 @@ import "./header.js"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+require("channels").
+require('jquery')

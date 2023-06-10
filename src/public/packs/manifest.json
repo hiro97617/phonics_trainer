@@ -3,8 +3,8 @@
   "admin.js.map": "/packs/js/admin-63cd450c31c922256e2c.js.map",
   "admin/login.js": "/packs/js/admin/login-ab4f8c9e23ee859e7a01.js",
   "admin/login.js.map": "/packs/js/admin/login-ab4f8c9e23ee859e7a01.js.map",
-  "application.js": "/packs/js/application-33ecf49237a0e64aac08.js",
-  "application.js.map": "/packs/js/application-33ecf49237a0e64aac08.js.map",
+  "application.js": "/packs/js/application-e7c59a9d7648db9a6f3a.js",
+  "application.js.map": "/packs/js/application-e7c59a9d7648db9a6f3a.js.map",
   "common.js": "/packs/js/common-6cba89ef9301d690675c.js",
   "common.js.map": "/packs/js/common-6cba89ef9301d690675c.js.map",
   "dashboard.js": "/packs/js/dashboard-3400a1db3fc88f463e30.js",
@@ -28,10 +28,10 @@
     },
     "application": {
       "js": [
-        "/packs/js/application-33ecf49237a0e64aac08.js"
+        "/packs/js/application-e7c59a9d7648db9a6f3a.js"
       ],
       "js.map": [
-        "/packs/js/application-33ecf49237a0e64aac08.js.map"
+        "/packs/js/application-e7c59a9d7648db9a6f3a.js.map"
       ]
     },
     "common": {
