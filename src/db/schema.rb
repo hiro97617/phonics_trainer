@@ -10,44 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_02_041959) do
+ActiveRecord::Schema.define(version: 2023_05_27_111945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "correct_questions", force: :cascade do |t|
-    t.bigint "multiple_choice_challenger_id", null: false
-    t.bigint "multiple_choice_question_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["multiple_choice_challenger_id"], name: "index_correct_questions_on_multiple_choice_challenger_id"
-    t.index ["multiple_choice_question_id"], name: "index_correct_questions_on_multiple_choice_question_id"
-  end
-
-  create_table "incorrect_questions", force: :cascade do |t|
-    t.bigint "multiple_choice_challenger_id", null: false
-    t.bigint "multiple_choice_question_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["multiple_choice_challenger_id"], name: "index_incorrect_questions_on_multiple_choice_challenger_id"
-    t.index ["multiple_choice_question_id"], name: "index_incorrect_questions_on_multiple_choice_question_id"
-  end
 
   create_table "level_parts", force: :cascade do |t|
     t.integer "level"
     t.integer "part"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "multiple_choice_challengers", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "level_part_id", null: false
-    t.integer "score"
-    t.datetime "start_date"
-    t.datetime "finish_date"
-    t.index ["level_part_id"], name: "index_multiple_choice_challengers_on_level_part_id"
-    t.index ["user_id"], name: "index_multiple_choice_challengers_on_user_id"
   end
 
   create_table "multiple_choice_question_tags", force: :cascade do |t|
@@ -94,12 +66,6 @@ ActiveRecord::Schema.define(version: 2023_06_02_041959) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "correct_questions", "multiple_choice_challengers"
-  add_foreign_key "correct_questions", "multiple_choice_questions"
-  add_foreign_key "incorrect_questions", "multiple_choice_challengers"
-  add_foreign_key "incorrect_questions", "multiple_choice_questions"
-  add_foreign_key "multiple_choice_challengers", "level_parts"
-  add_foreign_key "multiple_choice_challengers", "users"
   add_foreign_key "multiple_choice_question_tags", "multiple_choice_questions"
   add_foreign_key "multiple_choice_question_tags", "tags"
   add_foreign_key "multiple_choice_questions", "level_parts"

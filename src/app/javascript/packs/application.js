@@ -12,8 +12,6 @@ import "./dashboard.js"
 import "./admin.js"
 import "./header.js"
 
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-require('jquery')
