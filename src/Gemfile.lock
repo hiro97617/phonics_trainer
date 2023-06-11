@@ -104,6 +104,11 @@ GEM
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    gon (6.4.0)
+      actionpack (>= 3.0.20)
+      i18n (>= 0.7)
+      multi_json
+      request_store (>= 1.0)
     hashie (5.0.0)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
@@ -134,6 +139,7 @@ GEM
     mini_portile2 (2.8.2)
     minitest (5.18.0)
     msgpack (1.7.0)
+    multi_json (1.15.0)
     multi_xml (0.6.0)
     net-imap (0.3.4)
       date
@@ -219,6 +225,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.8.0)
+    request_store (1.5.1)
+      rack (>= 1.4)
     rexml (3.2.5)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
@@ -300,6 +308,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   carrierwave (>= 3.0.0.beta, < 4.0)
+  gon
   jbuilder (~> 2.7)
   listen (~> 3.3)
   mini_magick

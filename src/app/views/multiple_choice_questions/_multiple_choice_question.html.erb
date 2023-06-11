@@ -2,7 +2,7 @@
   <p class="text-4xl text-left" id="title">Question</p>
   <div id="js-multiple-choice-answer-for-quiz-<%= multiple_choice_question.id %>">
     <div class="grid grid-cols-1 place-items-center mb-4">
-      <p class="text-5xl text-center"><%= multiple_choice_question.body %></p>
+      <p class="text-5xl text-center" id="word" style="display: none;"><%= multiple_choice_question.body %></p>
       <div id="sound" class="listening-sound">
         <svg class="h-16 w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
@@ -17,6 +17,11 @@
               <div class="bg-white rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3" id="correct-choice">
                 <div class="mb-2 space-y-4">
                   <h3 class="text-xl font-semibold text-center text-purple-900" id="correct-choice-body"><%= choice.body %></h3>
+                  <div id="correct-body-sound" class="listening-sound" style="display: none;">
+                    <svg class="h-16 w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                    </svg>
+                  </div>
                   <div>
                     <%= image_tag choice.image.url %>
                   </div>
@@ -28,6 +33,11 @@
               <div class="bg-white rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3" id="incorrect-choice">
                 <div class="mb-2 space-y-4">
                   <h3 class="text-xl font-semibold text-center text-purple-900" id="incorrect-choice-body"><%= choice.body %> </h3>
+                  <div id="incorrect-body-sound" class="listening-sound" style="display: none;">
+                    <svg class="h-16 w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                    </svg>
+                  </div>
                   <div>
                     <%= image_tag choice.image.url %>
                   </div>
