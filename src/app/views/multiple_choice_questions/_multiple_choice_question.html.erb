@@ -1,5 +1,6 @@
 <div class="container m-auto px-8 py-6 bg-purple-200 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0">
   <p class="text-4xl text-left" id="title">Question</p>
+  <div id="judgement"></div>
   <div id="js-multiple-choice-answer-for-quiz-<%= multiple_choice_question.id %>">
     <div class="grid grid-cols-1 place-items-center mb-4">
       <p class="text-5xl text-center" id="word" style="display: none;"><%= multiple_choice_question.body %></p>
@@ -13,7 +14,7 @@
       <div class="mx-auto grid gap-6 sm:w-5/12 sm:grid-cols-2 md:w-5/12 md:grid-cols-2 lg:w-10/12 lg:grid-cols-2">
         <% multiple_choice_question.multiple_choices.shuffle.each do |choice| %>
           <% if choice.is_answer %>
-            <%= link_to multiple_choice_question_correct_questions_path(multiple_choice_question), method: :post, remote: true do %>
+            <%= link_to multiple_choice_question_correct_questions_path(multiple_choice_question), id: "select-correct-choice", method: :post, remote: true do %>
               <div class="bg-white rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3" id="correct-choice">
                 <div class="mb-2 space-y-4">
                   <h3 class="text-xl font-semibold text-center text-purple-900" id="correct-choice-body"><%= choice.body %></h3>
@@ -29,7 +30,7 @@
               </div>
             <% end %>
           <% else %>
-            <%= link_to multiple_choice_question_incorrect_questions_path(multiple_choice_question), method: :post, remote: true do %>
+            <%= link_to multiple_choice_question_incorrect_questions_path(multiple_choice_question), id: "select-incorrect-choice" ,method: :post, remote: true do %>
               <div class="bg-white rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3" id="incorrect-choice">
                 <div class="mb-2 space-y-4">
                   <h3 class="text-xl font-semibold text-center text-purple-900" id="incorrect-choice-body"><%= choice.body %> </h3>

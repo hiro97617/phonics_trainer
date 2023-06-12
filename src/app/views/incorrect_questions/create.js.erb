@@ -1,1 +1,1 @@
-$("#js-multiple-choice-answer-for-quiz-<%= @multiple_choice_question.id %>").replaceWith("<%= j(render('multiple_choice_questions/templates/incorrect_question', multiple_choice_question: @multiple_choice_question)) %>");
+$("#judgement").append("<%= j(render('multiple_choice_questions/templates/incorrect_question')) %>");

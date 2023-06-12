@@ -7,9 +7,7 @@ class MultipleChoiceQuestion < ApplicationRecord
   has_many :correct_questions
   has_many :incorrect_questions
 
-  def get_id(multiple_choice_questions)
-    multiple_choice_questions.each do | question |
-      gon.id = question.id
-    end
+  def next(level_part)
+    level_part.questions.where("id > ?", self.id).order("id ASC").first
   end
 end
