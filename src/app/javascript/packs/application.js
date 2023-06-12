@@ -13,7 +13,7 @@ import "./dashboard.js"
 import "./admin.js"
 import "./header.js"
 import "./common.js"
-import "./sound.js"
+import "./multiple_choice_question.js"
 
 Rails.start()
 Turbolinks.start()
