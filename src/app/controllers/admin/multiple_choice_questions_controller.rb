@@ -47,9 +47,10 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
 
   def create_multiple_choice_question_params
     params.require(:register_multiple_choice_question_form).permit(
-      :multiple_choice_question_body, :correct_choice, :incorrect_choice_1, :incorrect_choice_2,
-      :level_part_id, :image_for_correct_choice, :image_for_correct_choice_cache, :image_for_incorrect_choice_1,
-      :image_for_incorrect_choice_1_cache, :image_for_incorrect_choice_2, :image_for_incorrect_choice_2_cache)
+      :multiple_choice_question_body, :choice_1, :choice_2, :choice_3, :level_part_id,
+      :image_for_choice_1, :image_for_choice_1_cache, :image_for_choice_2, :image_for_choice_2_cache,
+      :image_for_choice_3, :image_for_choice_3_cache, :is_answer_1, :is_answer_2, :is_answer_3
+    )
   end
 
   def check_multiple_choice_question
