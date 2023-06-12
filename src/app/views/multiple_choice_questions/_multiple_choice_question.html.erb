@@ -14,37 +14,45 @@
       <div class="mx-auto grid gap-6 sm:w-5/12 sm:grid-cols-2 md:w-5/12 md:grid-cols-2 lg:w-10/12 lg:grid-cols-2">
         <% multiple_choice_question.multiple_choices.shuffle.each do |choice| %>
           <% if choice.is_answer %>
-            <%= link_to multiple_choice_question_correct_questions_path(multiple_choice_question), id: "select-correct-choice", method: :post, remote: true do %>
-              <div class="bg-white rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3" id="correct-choice">
-                <div class="mb-2 space-y-4">
-                  <h3 class="text-xl font-semibold text-center text-purple-900" id="correct-choice-body"><%= choice.body %></h3>
-                  <div id="correct-body-sound" class="listening-sound" style="display: none;">
-                    <svg class="h-16 w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
-                    </svg>
+            <div id="correct">
+              <div id="correct-choice">
+                <%= link_to multiple_choice_question_correct_questions_path(multiple_choice_question), id: "select-correct-choice", method: :post, remote: true do %>
+                  <div class="bg-white rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3">
+                    <div class="mb-2 space-y-4">
+                      <h3 class="text-xl font-semibold text-center text-purple-900" id="correct-choice-body"><%= choice.body %></h3>
+                      <div>
+                        <%= image_tag choice.image.url %>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <%= image_tag choice.image.url %>
-                  </div>
-                </div>
+                <% end %>
               </div>
-            <% end %>
+              <div id="correct-body-sound" class="listening-sound" style="display: none;">
+                <svg class="h-16 w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                </svg>
+              </div>
+            </div>
           <% else %>
-            <%= link_to multiple_choice_question_incorrect_questions_path(multiple_choice_question), id: "select-incorrect-choice" ,method: :post, remote: true do %>
-              <div class="bg-white rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3" id="incorrect-choice">
-                <div class="mb-2 space-y-4">
-                  <h3 class="text-xl font-semibold text-center text-purple-900" id="incorrect-choice-body"><%= choice.body %> </h3>
-                  <div id="incorrect-body-sound" class="listening-sound" style="display: none;">
-                    <svg class="h-16 w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
-                    </svg>
+            <div id="incorrect">
+              <div id="incorrect-choice">
+                <%= link_to multiple_choice_question_incorrect_questions_path(multiple_choice_question), id: "select-incorrect-choice" ,method: :post, remote: true do %>
+                  <div class="bg-white rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3" id="incorrect-choice">
+                    <div class="mb-2 space-y-4">
+                      <h3 class="text-xl font-semibold text-center text-purple-900" id="incorrect-choice-body"><%= choice.body %> </h3>
+                      <div id="incorrect-body-sound" class="listening-sound" style="display: none;">
+                        <svg class="h-16 w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <%= image_tag choice.image.url %>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <%= image_tag choice.image.url %>
-                  </div>
-                </div>
+                <% end %>
               </div>
-            <% end %>
+            </div>
           <% end %>
         <% end %>
       </div>
