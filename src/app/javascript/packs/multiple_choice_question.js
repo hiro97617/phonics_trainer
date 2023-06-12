@@ -24,6 +24,22 @@ function checkIncorrectChoicePronounce() {
   speechSynthesis.speak(utterance)
 }
 
+function removeLinksFromText(linkedText) {
+  const tempElement = document.createElement('div');
+  tempElement.innerHTML = linkedText;
+
+  // a要素を取得してリンクを削除する
+  const linkElements = tempElement.getElementsByTagName('a');
+  for (let i = linkElements.length - 1; i >= 0; i--) {
+    const link = linkElements[i];
+    const textNode = document.createTextNode(link.textContent);
+    link.parentNode.replaceChild(textNode, link);
+  }
+
+  // リンクを削除した文字列を返す
+  return tempElement.innerHTML;
+}
+
 function showAnswer() {
   const correct = document.getElementById("correct-choice")
   correct.className = "bg-green-200 rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3"
@@ -37,6 +53,7 @@ function showAnswer() {
   correctSound.style.display = "block";
   const incorrectSound = document.getElementById("incorrect-body-sound")
   incorrectSound.style.display = "block";
+
 };
 
 
@@ -49,10 +66,6 @@ if (trigger) {
   speechSynthesis.onvoiceschanged = e => {
     pronounce()
   }
-}
-});
-
-document.addEventListener("DOMContentLoaded", function () {
 const checkCorrectChoice = document.getElementById('correct-choice')
 if (checkCorrectChoice) {
   checkCorrectChoice.addEventListener('click', checkCorrectChoicePronounce())
@@ -60,15 +73,13 @@ if (checkCorrectChoice) {
     checkCorrectChoicePronounce()
   }
 }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
 const checkIncorrectChoice = document.getElementById('incorrect-choice')
 if (checkIncorrectChoice){
   checkIncorrectChoice.addEventListener('click', checkIncorrectChoicePronounce())
   speechSynthesis.onvoiceschanged = e => {
     checkIncorrectChoicePronounce()
   }
+}
 }
 });
 
