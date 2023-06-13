@@ -48,11 +48,7 @@ function showAnswer() {
   incorrect.className = "bg-red-200 rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3"
 
   const word = document.getElementById("word")
-  word.style.display = "block"
-  const correctSound = document.getElementById("correct-body-sound")
-  correctSound.style.display = "block";
-  const incorrectSound = document.getElementById("incorrect-body-sound")
-  incorrectSound.style.display = "block";
+  word.style.display = "block";
 
 };
 
@@ -66,20 +62,20 @@ if (trigger) {
   speechSynthesis.onvoiceschanged = e => {
     pronounce()
   }
-const checkCorrectChoice = document.getElementById('correct-choice')
+}
+const checkCorrectChoice = document.getElementById('correct-body-sound')
 if (checkCorrectChoice) {
-  checkCorrectChoice.addEventListener('click', checkCorrectChoicePronounce())
+  checkCorrectChoice.addEventListener('click', checkCorrectChoicePronounce)
   speechSynthesis.onvoiceschanged = e => {
     checkCorrectChoicePronounce()
   }
 }
-const checkIncorrectChoice = document.getElementById('incorrect-choice')
+const checkIncorrectChoice = document.getElementById('incorrect-body-sound')
 if (checkIncorrectChoice){
-  checkIncorrectChoice.addEventListener('click', checkIncorrectChoicePronounce())
+  checkIncorrectChoice.addEventListener('click', checkIncorrectChoicePronounce)
   speechSynthesis.onvoiceschanged = e => {
     checkIncorrectChoicePronounce()
   }
-}
 }
 });
 
