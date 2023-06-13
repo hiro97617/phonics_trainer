@@ -1,6 +1,6 @@
 class MultipleChoiceQuestionsController < ApplicationController
-  before_action :find_level_part, only: %i[start index show answer finish result]
-  before_action :find_multiple_choice_challenger, only: %i[show finish result]
+  before_action :find_level_part, only: %i[start index show finish result_page]
+  before_action :find_multiple_choice_challenger, only: %i[show finish result_page]
 
   def top
     @level_parts = LevelPart.all
@@ -25,6 +25,7 @@ class MultipleChoiceQuestionsController < ApplicationController
 
   def answer
     @multiple_choice_question = MultipleChoiceQuestion.find(params[:multiple_choice_question_id])
+    @level_part = @multiple_choice_question.level_part
     @next = @level_part.multiple_choice_questions.find_by(id: @multiple_choice_question.id + 1)
   end
 
@@ -33,7 +34,7 @@ class MultipleChoiceQuestionsController < ApplicationController
     redirect_to level_part_multiple_choice_result_path(@level_part)
   end
 
-  def result
+  def result_page
     @next_part = LevelPart.find_by(level: @level_part.level, part: @level_part.part + 1)
     @next_level = LevelPart.find_by(level: @level_part.level + 1, part: 1)
   end
