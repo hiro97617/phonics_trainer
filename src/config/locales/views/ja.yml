@@ -1,11 +1,14 @@
 ja:
   defaults:
     service_name: 'PhonicsTrainer'
-    explanation: 'PhonicsTrainerとは'
-    lang_selection: '言語選択'
+    lang_selection: 'Language'
     login: 'ログイン'
-    register: '新規登録'
+    register: 'ユーザー登録'
     logout: 'ログアウト'
+    how_to_play: "PhonicsTrainerの遊び方"
+    games: "ゲーム一覧"
+    videos: "動画一覧"
+    listen: "2つの単語の音を聞こう! そして次へ!"
     message:
       please_login: "ログインしてください"
       created: "%{item}を作成しました"
@@ -15,31 +18,80 @@ ja:
       not_update: "%{item}を更新できませんでした"
       reset_password: 'パスワードリセットの件について'
       not_authorized: '権限がありません'
+      password_minimum: "半角英数字6字以上"
+      same_password: "パスワードと同じものを入れる"
+      forget_password: "パスワードを忘れた方はこちら"
+      create: "新規作成"
     helpers:
       submit:
         create: "作成する"
         update: "更新する"
+  home:
+    top:
+      catch_copy:
+        first: "発音とスペルのルールを学ぶ"
+        second: "発音とスペルのつながりを感じる"
+        third: "英語の勉強をより楽しく"
+      explanation:
+        main_title:
+          title: 'PhonicsTrainerとは?'
+        first_subtitle:
+          title: 'Phonicsとは?'
+          first_line_description: "Phonicsとは音とスペルについてのルールです。"
+          second_line_description: "スペルとは'a', 'b'などの文字のことです。"
+          third_line_description: "日本語の音と文字についてのルールは分かりますね？"
+          fourth_line_description: "たとえば、「あ」を何と読みますか？声に出してみてください。"
+          fifth_line_description: "これをすると、みんな同じ音を出すと思います。"
+          sixth_line_description: "なぜなら日本語の音と文字についてのルールを知っているからです。そのようなルールは英語にもあります。"
+          seventh_line_description: "そのルールこそがPhonicsです!!"
+        second_subtitle:
+          title: '学校では習うの？'
+          first_line_description: "海外ではPhonicsを小さい時に習うみたいです。"
+          second_line_description: "しかし、日本の学校で教えるようにしなさいとなっていません。"
+          third_line_description: "小学校では話す・聞く・やりとりを中心に教えていきます。"
+          fourth_line_description: "そして中学校/高校でいきなり「スペル正しく!」と言われます。"
+          fifth_line_description: "もちろんスペルの正しさは大切です。しかし、これでは英語が嫌いになってしまいます。"
+        third_subtitle:
+          title: 'PhonicsTrainerとは?'
+          first_line_description: "大切なことは、小学校〜中学校で音とスペルに触れることです！"
+          second_line_description: "楽しく学び、できるようになったことを喜びましょう！"
+          third_line_description: "それに役立つのが、「PhonicsTrainer」です!!"
+          fourth_line_description: "「PhonicsTrainer」では、ゲーム感覚で楽しく学べます!"
+          fifth_line_description: "またオススメ動画も紹介しているので気軽に触れられます！"
+          sixth_line_description: "少しずつ英語の音とスペルになれていきましょう！"
+          seventh_line_description: "そして、英語の勉強を楽しみましょう！"
   users:
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
   user_sessions:
     new:
-      title: 'ログイン'
-      to_register_page: '登録ページへ'
+      title: 'ログイン！！'
+      to_register_page: 'ユーザー登録はこちら'
       password_forget: 'パスワードをお忘れの方はこちら'
+      sign_in_with_google: 'Googleでログイン!!(未実装です!)'
+      login_with_email: "メールアドレスでログイン!"
+      welcome_back: "Welcome back!!"
+  multiple_choice_questions:
+    answer:
+      next_question: "次の問題へ！"
+      finish: "終わって結果を見る！"
+    result_page:
+      your_score: "%{name}さんの得点は、%{full_score}点中%{score}点でした!"
+      tweet: "ツイッターで結果を共有する!"
+      to_top_page: "トップページへ!"
+      to_next_part: "次のパートへ!"
+      to_next_level: "次のレベルへ!"
+      congratulations: "おめでとう！！これで全部クリアだよ！すごいすごい！！"
   admin:
     users:
       index:
         title: 'ユーザー一覧'
       show:
         title: '掲示板詳細'
-    boards:
-      index:
-        title: '掲示板一覧'
     user_sessions:
       new:
-        title: 'ログイン'
+        title: '管理者ログイン'
       create:
         success: 'ログインしました'
         fail: 'ログインに失敗しました'

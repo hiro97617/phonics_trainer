@@ -6,12 +6,9 @@
       </div>
       <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
         <div class="w-full">
+          <h1 class="mb-4 text-xl text-center font-semibold text-gray-700 dark:text-gray-200"><%= t('.title') %> </h1>
           <%= render 'form' %>
-          <p class="mt-4">
-            <a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline" href="./forgot-password.html">
-              Forgot your password?
-            </a>
-          </p>
+          <%= link_to t('defaults.message.forget_password'), "#", class:"text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline" %>
         </div>
       </div>
     </div>
