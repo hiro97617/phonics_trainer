@@ -1,0 +1,33 @@
+<div id="js-choice-button-for-quiz-<%= @multiple_choice_question.id %>">
+  <div class="mx-auto grid gap-6 sm:w-5/12 sm:grid-cols-2 md:w-5/12 md:grid-cols-2 lg:w-10/12 lg:grid-cols-2">
+    <% @multiple_choice_question.multiple_choices.each do |choice| %>
+      <% if choice.is_answer %>
+        <div id="correct">
+          <div id="correct-choice">
+            <div class="bg-green-200 border border-black rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3">
+              <div class="mb-2 space-y-4">
+                <h3 class="text-xl font-semibold text-center text-purple-900" id="correct-choice-body"><%= choice.body %></h3>
+                <div>
+                  <%= image_tag choice.image.url %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div id="incorrect">
+          <div id="incorrect-choice">
+            <div class="bg-red-200 border border-black rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3" id="incorrect-choice">
+              <div class="mb-2 space-y-4">
+                <h3 class="text-xl font-semibold text-center text-purple-900" id="incorrect-choice-body"><%= choice.body %> </h3>
+                <div>
+                  <%= image_tag choice.image.url %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

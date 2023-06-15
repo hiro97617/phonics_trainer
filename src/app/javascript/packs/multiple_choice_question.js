@@ -24,22 +24,6 @@ function checkIncorrectChoicePronounce() {
   speechSynthesis.speak(utterance)
 }
 
-function removeLinksFromText(linkedText) {
-  const tempElement = document.createElement('div');
-  tempElement.innerHTML = linkedText;
-
-  // a要素を取得してリンクを削除する
-  const linkElements = tempElement.getElementsByTagName('a');
-  for (let i = linkElements.length - 1; i >= 0; i--) {
-    const link = linkElements[i];
-    const textNode = document.createTextNode(link.textContent);
-    link.parentNode.replaceChild(textNode, link);
-  }
-
-  // リンクを削除した文字列を返す
-  return tempElement.innerHTML;
-}
-
 function showAnswer() {
   const correct = document.getElementById("correct-choice")
   correct.className = "bg-green-200 rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3"
