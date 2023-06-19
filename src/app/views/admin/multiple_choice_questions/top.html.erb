@@ -1,0 +1,5 @@
+<div class="text-black mt-24">
+  <% @level_parts.each do |level_part| %>
+    <%= link_to "#{level_part.level}-#{level_part.part}", admin_level_part_multiple_choice_questions_path(level_part) %>
+  <% end %>
+</div>

@@ -1,5 +1,4 @@
-
-<nav id="header" class="fixed w-full z-30 top-0 text-white">
+<nav id="after-login-header" class="fixed w-full z-30 top-0 text-white">
     <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
       <div class="pl-4 flex items-center">
         <%= link_to dashboard_path, data: { turbo: false }  do %>
@@ -22,10 +21,10 @@
           </svg>
         </button>
       </div>
-      <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+      <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
         <ul class="list-reset lg:flex justify-end flex-1 items-center">
           <li class="mr-3">
-            <%= link_to t('defaults.how_to_play'), "#" ,class:"inline-block py-2 px-4 text-black font-bold no-underline"%>
+            <%= link_to t('defaults.how_to_play'), explanation_path ,class:"inline-block py-2 px-4 text-black font-bold no-underline"%>
           </li>
           <li class="mr-3">
             <%= link_to t('defaults.lang_selection'), "#" ,class:"inline-block py-2 px-4 text-black font-bold no-underline"%>
@@ -37,15 +36,12 @@
             <%= link_to t('defaults.videos'), "#", class:"inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" %>
           </li>
         </ul>
-        <button type="button"
-          id="navbarAction"
-          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-        >
+        <%= button_tag(type: 'button', id:"navbarAction", class:"mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out")  do %>
           <%= current_user.name %>
           <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
           </svg>
-        </button>
+        <% end %>
         <%= render 'shared/after_login_toggle'%>
       </div>
     </div>
