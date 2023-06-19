@@ -7,7 +7,7 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
 
   def index
     @level_part = LevelPart.find(params[:level_part_id])
-    @multiple_choice_questions = @level_part.multiple_choice_questions.include(:level_part)
+    @multiple_choice_questions = @level_part.multiple_choice_questions.includes(:level_part)
   end
 
   def new

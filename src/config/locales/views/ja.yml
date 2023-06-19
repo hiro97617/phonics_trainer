@@ -83,6 +83,23 @@ ja:
       to_next_part: "次のパートへ!"
       to_next_level: "次のレベルへ!"
       congratulations: "おめでとう！！これで全部クリアだよ！すごいすごい！！"
+  explanations:
+    static_page:
+      first_paragraph:
+        title: "英語の音を楽しもう!!(未実装)"
+        first_line_sentence: "まず大切なことは音を聞いて声に出すこと。"
+        second_line_sentence: "オススメ動画・良い動画があるので、それを見て聞いて真似してみよう！"
+      second_paragraph:
+        title: "２択ゲームにチャレンジして遊んでみよう!!"
+        first_line_sentence: "ゲーム一覧をクリック→レベル・パートをクリック→スタートをクリック!!"
+        second_line_sentence: "「音ボタン」を押すと流れるよ！(スペルはわからない)"
+        third_line_sentence: "そして、２つの単語が下に出るよ!"
+        fourth_line_sentence: "どちらの単語が流れたかを当てよう!"
+        fifth_line_sentence: "下に出てきたボタンをクリックして、答えのページで２つの単語を聞いて比べよう！"
+      third_paragraph:
+        title: "もう一種類のゲームを考え中です"
+        first_line_sentence: "ここに説明文を入れたいです"
+        second_line_sentence: "お楽しみに!!"
   admin:
     users:
       index:
