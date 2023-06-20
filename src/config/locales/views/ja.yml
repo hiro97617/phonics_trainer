@@ -1,7 +1,7 @@
 ja:
   defaults:
     service_name: 'PhonicsTrainer'
-    lang_selection: 'Language'
+    lang_selection: 'English'
     login: 'ログイン'
     register: 'ユーザー登録'
     logout: 'ログアウト'
@@ -32,6 +32,8 @@ ja:
         first: "発音とスペルのルールを学ぶ"
         second: "発音とスペルのつながりを感じる"
         third: "英語の勉強をより楽しく"
+  outlines:
+    static_page:
       explanation:
         main_title:
           title: 'PhonicsTrainerとは?'
