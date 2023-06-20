@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var header = document.getElementById("header");
   var navcontent = document.getElementById("nav-content");
   var navaction = document.getElementById("navAction");
-  var brandname = document.getElementById("brandname");
   var toToggle = document.querySelectorAll(".toggleColour");
 
   document.addEventListener("scroll", function () {
@@ -74,18 +73,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return false;
   }
-
-  const scrollToExplanation = () =>{
-    const explanationLeft = document.getElementById("top-explanation").getBoundingClientRect().left;
-    const explanationTop = document.getElementById("top-explanation").getBoundingClientRect().top;
-    window.scrollTo({
-      left: explanationLeft,
-      top: explanationTop,
-      behavior: 'smooth'
-    });
-  }
-
-  const explanationButton = document.getElementById("to-explanation")
-  explanationButton.addEventListener('click', scrollToExplanation)
   };
 });

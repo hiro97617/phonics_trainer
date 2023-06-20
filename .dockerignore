@@ -20,4 +20,6 @@
 
 
 # Ignore master key for decrypting credentials and more.
+/app/config/master.key
+src/config/master.key
 /config/master.key

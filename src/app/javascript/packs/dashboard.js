@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let toToggle = document.querySelectorAll(".toggleColour");
       if (scrollposition > 10) {
         loginheader.classList.add("bg-white");
+        loginheader.classList.remove("gradient");
         navbaraction.classList.remove("bg-white");
         navbaraction.classList.add("gradient");
         navbaraction.classList.remove("text-gray-800");

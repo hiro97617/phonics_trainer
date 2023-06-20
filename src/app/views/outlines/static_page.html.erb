@@ -1,0 +1,71 @@
+  <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <!--Nav-->
+    <!--render and restore in 'shared/header'file -->
+    <section class="bg-white border-b py-8">
+      <div id="top-explanation" class="container max-w-5xl mx-auto m-8 pt-16">
+        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          <%= t('.explanation.main_title.title')  %>
+        </h2>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="flex flex-wrap">
+          <div class="w-5/6 sm:w-1/2 p-6">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+              <%= t('.explanation.first_subtitle.title') %>
+            </h3>
+            <p class="text-gray-600 mb-8">
+              <%= t('.explanation.first_subtitle.first_line_description') %><br />
+              <%= t('.explanation.first_subtitle.second_line_description') %><br />
+              <%= t('.explanation.first_subtitle.third_line_description') %><br />
+              <%= t('.explanation.first_subtitle.fourth_line_description') %><br />
+              <%= t('.explanation.first_subtitle.fifth_line_description') %><br />
+              <%= t('.explanation.first_subtitle.sixth_line_description') %><br />
+              <%= t('.explanation.first_subtitle.seventh_line_description') %><br /><br />
+            </p>
+          </div>
+          <div class="w-full sm:w-1/2 p-6">
+            <%= image_tag 'home/phonics' %>
+          </div>
+        </div>
+        <div class="flex flex-wrap flex-col-reverse sm:flex-row">
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <%= image_tag 'home/boring' %>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <div class="align-middle">
+              <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                <%= t('.explanation.second_subtitle.title') %>
+              </h3>
+              <p class="text-gray-600 mb-8">
+                <%= t('.explanation.second_subtitle.first_line_description') %><br />
+                <%= t('.explanation.second_subtitle.second_line_description') %><br />
+                <%= t('.explanation.second_subtitle.third_line_description') %><br />
+                <%= t('.explanation.second_subtitle.fourth_line_description') %><br />
+                <%= t('.explanation.second_subtitle.fifth_line_description') %><br />
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-wrap">
+          <div class="w-5/6 sm:w-1/2 p-6">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+              <%= t('.explanation.third_subtitle.title') %>
+            </h3>
+            <p class="text-gray-600 mb-8">
+              <%= t('.explanation.third_subtitle.first_line_description') %><br />
+              <%= t('.explanation.third_subtitle.second_line_description') %><br />
+              <%= t('.explanation.third_subtitle.third_line_description') %><br />
+              <%= t('.explanation.third_subtitle.fourth_line_description') %><br />
+              <%= t('.explanation.third_subtitle.fifth_line_description') %><br />
+              <%= t('.explanation.third_subtitle.sixth_line_description') %><br />
+              <%= t('.explanation.third_subtitle.seventh_line_description') %><br /><br />
+            </p>
+          </div>
+          <div class="w-full sm:w-1/2 p-6">
+            <%= image_tag 'home/phonics_trainer' %>
+          </div>
+        </div>
+      </div>
+    </section>

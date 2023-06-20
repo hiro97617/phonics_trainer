@@ -1,8 +1,8 @@
 en:
   defaults:
     service_name: 'PhonicsTrainer'
-    explanation: 'PhonicsTrainerとは'
-    lang_selection: '言語選択'
+    explanation: 'What is PhonicsTrainer?'
+    lang_selection: '日本語'
     login: 'Login'
     register: 'Register'
     logout: 'Logout'
@@ -15,10 +15,50 @@ en:
       not_update: "Failed to update %{item}"
       reset_password: 'Regarding resetting password'
       not_authorized: 'You are not authorized'
+      password_minimum: "minimum 6 letters or numbers"
+      same_password: "Enter same password"
+      forget_password: "Forgot password?"
+      create: "Create"
     helpers:
       submit:
         create: "create!"
         update: "Update!"
+  home:
+    top:
+      catch_copy:
+        first: "Learn the connections between pronunciation and spelling."
+        second: "Notice the connections."
+        third: "Enjoy learning English more!"
+  outlines:
+    static_page:
+      explanation:
+        main_title:
+          title: 'What is PhonicsTrainer?'
+        first_subtitle:
+          title: 'What is Phonics?'
+          first_line_description: "Phonics is a rule that refers to a sound and a spelling."
+          second_line_description: "Spelling is involved with letters such as 'a' and 'b'. "
+          third_line_description: "If the rule is about your mother tongue, you will learn it unconsciously."
+          fourth_line_description: "For example, if you have a Japanese friend, ask this question; how to pronounce 'あ'?"
+          fifth_line_description: "The answers should be same."
+          sixth_line_description: "That's because Japanese know the rules about Japanese sound and spelling. English has such rules as well. "
+          seventh_line_description: "That is Phonics!! "
+        second_subtitle:
+          title: 'Do you teach Phonics in your school?'
+          first_line_description: "Maybe most of you, English teachers from foreign countries, have experienced phonics."
+          second_line_description: "However, most of the Japanese English learners don't."
+          third_line_description: "While English education in Japan is gradually changing, Japanese teachers put focus on accuracy too much without learning phonics."
+          fourth_line_description: "Japanese students don't learn spelling in elementary school. When they become a junior high school student, mistakes about spellings and grammars are not allowed."
+          fifth_line_description: "If their production is not perfect, their score in test will be deducted. How about your school?"
+        third_subtitle:
+          title: 'What is PhonicsTrainer?'
+          first_line_description: "For Japanese students learning English, it is important to notice the rules regarding phonics."
+          second_line_description: "When they are around twelve(10 ~ 13), they should learn phonics with a lot of fun!! "
+          third_line_description: "それに役立つのが、「PhonicsTrainer」です!!"
+          fourth_line_description: "「PhonicsTrainer」では、ゲーム感覚で楽しく学べます!"
+          fifth_line_description: "またオススメ動画も紹介しているので気軽に触れられます！"
+          sixth_line_description: "少しずつ英語の音とスペルになれていきましょう！"
+          seventh_line_description: "そして、英語の勉強を楽しみましょう！"
   users:
     new:
       title: 'New User'
@@ -28,6 +68,34 @@ en:
       title: 'Login'
       to_register_page: 'Create User'
       password_forget: 'Forgot Password?'
+  multiple_choice_questions:
+    answer:
+      next_question: "次の問題へ！"
+      finish: "終わって結果を見る！"
+    result_page:
+      your_score: "%{name}さんの得点は、%{full_score}点中%{score}点でした!"
+      tweet: "ツイッターで結果を共有する!"
+      to_top_page: "トップページへ!"
+      to_next_part: "次のパートへ!"
+      to_next_level: "次のレベルへ!"
+      congratulations: "おめでとう！！これで全部クリアだよ！すごいすごい！！"
+  explanations:
+    static_page:
+      first_paragraph:
+        title: "英語の音を楽しもう!!(未実装)"
+        first_line_sentence: "まず大切なことは音を聞いて声に出すこと。"
+        second_line_sentence: "オススメ動画・良い動画があるので、それを見て聞いて真似してみよう！"
+      second_paragraph:
+        title: "２択ゲームにチャレンジして遊んでみよう!!"
+        first_line_sentence: "ゲーム一覧をクリック→レベル・パートをクリック→スタートをクリック!!"
+        second_line_sentence: "「音ボタン」を押すと流れるよ！(スペルはわからない)"
+        third_line_sentence: "そして、２つの単語が下に出るよ!"
+        fourth_line_sentence: "どちらの単語が流れたかを当てよう!"
+        fifth_line_sentence: "下に出てきたボタンをクリックして、答えのページで２つの単語を聞いて比べよう！"
+      third_paragraph:
+        title: "もう一種類のゲームを考え中です"
+        first_line_sentence: "ここに説明文を入れたいです"
+        second_line_sentence: "お楽しみに!!"
   admin:
     users:
       index:
