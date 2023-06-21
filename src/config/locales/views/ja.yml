@@ -11,6 +11,7 @@ ja:
     listen: "2つの単語の音を聞こう! そして次へ!"
     message:
       please_login: "ログインしてください"
+      edit: "%{item}を編集する"
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
       delete_confirm: "削除しますか？"
@@ -75,6 +76,8 @@ ja:
       login_with_email: "メールアドレスでログイン!"
       welcome_back: "Welcome back!!"
   multiple_choice_questions:
+    start_page:
+      start: "スタート！！"
     answer:
       next_question: "次の問題へ！"
       finish: "終わって結果を見る！"
@@ -87,6 +90,8 @@ ja:
       congratulations: "おめでとう！！これで全部クリアだよ！すごいすごい！！"
   explanations:
     static_page:
+      main_title:
+        title: "PhonicsTrainerの遊び方"
       first_paragraph:
         title: "英語の音を楽しもう!!(未実装)"
         first_line_sentence: "まず大切なことは音を聞いて声に出すこと。"
@@ -102,6 +107,10 @@ ja:
         title: "もう一種類のゲームを考え中です"
         first_line_sentence: "ここに説明文を入れたいです"
         second_line_sentence: "お楽しみに!!"
+  profiles:
+    show:
+      title: "プロフィール"
+      edit: "編集する"
   admin:
     users:
       index:

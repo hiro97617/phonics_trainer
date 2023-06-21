@@ -42,6 +42,6 @@ class Admin::LevelPartsController < Admin::BaseController
   end
 
   def level_part_params
-    params.require(:level_part).permit(:level, :part)
+    params.require(:level_part).permit(:level, :part, :icon, :icon_cache)
   end
 end

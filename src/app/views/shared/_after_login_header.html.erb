@@ -42,10 +42,7 @@
         </li>
       </ul>
       <%= button_tag(type: 'button', id:"navbarAction", class:"mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out")  do %>
-        <%= current_user.name %>
-        <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-        </svg>
+        <%= image_tag current_user.avatar_url, size: '40x40', class: 'rounded-full'%>
       <% end %>
       <%= render 'shared/after_login_toggle'%>
     </div>

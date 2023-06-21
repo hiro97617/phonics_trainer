@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy', as: 'logout'
     root to: 'home#top'
+    resource :profile, only: %i[show edit update]
     get 'multiple_choice_questions', to: 'multiple_choice_questions#top'
     resources :users, only: %i[new create]
     resources :level_parts, only: %i[show] do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_10_094436) do
+ActiveRecord::Schema.define(version: 2023_06_21_073445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2023_06_10_094436) do
     t.integer "part"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "icon"
   end
 
   create_table "multiple_choice_challengers", force: :cascade do |t|
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(version: 2023_06_10_094436) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "role", default: 0
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

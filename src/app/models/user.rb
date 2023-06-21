@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   enum role: { general:0, admin:1 }
   has_many :multiple_choice_challengers, dependent: :destroy
+  mount_uploader :avatar, AvatarUploader
 
   validates :name, presence: true
   validates :email, presence: true
