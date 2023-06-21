@@ -1,5 +1,5 @@
 class MultipleChoiceQuestionsController < ApplicationController
-  before_action :find_level_part, only: %i[start index show finish result_page]
+  before_action :find_level_part, only: %i[start_page start index show finish result_page]
   before_action :find_multiple_choice_challenger, only: %i[show finish result_page]
 
   def top

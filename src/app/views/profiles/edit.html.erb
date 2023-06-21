@@ -1,0 +1,33 @@
+<section class="bg-white border-b py-8">
+  <%= form_with model: @user, url: profile_path, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div id="edit-profile-page" class="container max-w-5xl mx-auto m-8 pt-16">
+      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar, onchange:'previewFileWithId(preview)', accept:'image/*' %>
+        <%= f.hidden_field :avatar_cache %>
+        <div class="relative">
+          <%= image_tag @user.avatar.url, class: "rounded-full border-2 border-gray-600", id: 'preview', size: "400x400" %>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <div class="mb-2 text-black text-xl mt-10 space-x-4">
+          <%= f.label :name %>
+          <i class="fa fa-user-circle fa-2x mr-4" aria-hidden="true"></i>
+          <%= f.text_field :name, class: "border border-radius border-black" %>
+        </div>
+        <div class="mb-2 text-black text-xl mt-10 space-x-4">
+          <%= f.label :email %>
+          <i class="fa fa-user-circle fa-2x mr-4" aria-hidden="true"></i>
+          <%= f.text_field :email, class: "border border-radius border-black" %>
+        </div>
+      </div>
+      <div class="mt-10 py-10 border-t border-black text-center">
+        <div class="flex flex-wrap justify-center">
+          <%= f.submit class: "px-4 py-2 rounded-md text-lg font-medium border shadow focus:outline-none focus:ring transition text-green-600 bg-green-50 border-green-200 hover:bg-green-100 active:bg-green-200 focus:ring-green-300" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>
