@@ -1,8 +1,6 @@
-
-
 <div class="bg-gray-800 pt-3">
   <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-      <h1 class="font-bold pl-2">Multiple Choice Questions</h1>
+      <h1 class="font-bold pl-2"><%= t('.title') %> </h1>
   </div>
 </div>
 <div class="w-full p-3">
@@ -14,11 +12,12 @@
         <table class="w-full p-5 text-gray-700">
           <thead>
             <tr>
-              <th scope="col" class="text-left text-blue-900">Body</th>
-              <th scope="col" class="text-left text-blue-900">Correct Body</th>
-              <th scope="col" class="text-left text-blue-900">Incorrext Body</th>
-              <th scope="col" class="text-left text-blue-900">Level</th>
-              <th scope="col" class="text-left text-blue-900">Part</th>
+              <th scope="col" class="text-left text-blue-900"><%= t('.body') %></th>
+              <th scope="col" class="text-left text-blue-900"><%= t('.choice_1') %></th>
+              <th scope="col" class="text-left text-blue-900"><%= t('.choice_2') %></th>
+              <th scope="col" class="text-left text-blue-900"><%= t('.choice_3') %></th>
+              <th scope="col" class="text-left text-blue-900"><%= t('.level') %></th>
+              <th scope="col" class="text-left text-blue-900"><%= t('.part') %></th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -27,7 +26,7 @@
           </tbody>
         </table>
       <% else %>
-        <p>まだ問題はありません</p>
+        <p><%= t('.no_question') %></p>
       <% end %>
     </div>
   </div>

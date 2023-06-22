@@ -1,5 +1,5 @@
 <div class="container m-auto px-8 py-6 bg-purple-200 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0" id="question">
-  <p class="text-4xl text-left" id="title">Question</p>
+  <p class="text-4xl text-left" id="title"></p>
   <div id="judgement"></div>
   <div id="js-multiple-choice-answer-for-quiz-<%= multiple_choice_question.id %>">
     <div class="grid grid-cols-1 place-items-center mb-4">
@@ -12,7 +12,7 @@
     </div>
     <div id="js-choice-button-for-quiz-<%= multiple_choice_question.id %>">
       <div class="mx-auto grid gap-6 sm:w-5/12 sm:grid-cols-2 md:w-5/12 md:grid-cols-2 lg:w-10/12 lg:grid-cols-2">
-        <% multiple_choice_question.multiple_choices.shuffle.each do |choice| %>
+        <% multiple_choice_question.multiple_choices.each do |choice| %>
           <% if choice.is_answer %>
             <div id="correct">
               <div id="correct-choice">

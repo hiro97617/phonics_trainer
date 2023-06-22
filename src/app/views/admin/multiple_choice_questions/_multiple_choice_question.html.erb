@@ -10,6 +10,12 @@
       <%= multiple_choice_question.multiple_choices[1].body %>
     </td>
     <td>
+      <% if multiple_choice_question.multiple_choices[2].present? %>
+        <%= multiple_choice_question.multiple_choices[2].body %>
+      <% else %>
+        <p class="text-black"><%= t('.choice_none') %> </p>
+    </td>
+    <td>
       <%= multiple_choice_question.level_part.level %>
     </td>
     <td>

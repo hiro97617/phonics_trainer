@@ -1,6 +1,6 @@
 <div class="bg-gray-800 pt-3">
   <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-      <h1 class="font-bold pl-2">User</h1>
+      <h1 class="font-bold pl-2"><%= t('.title') %></h1>
   </div>
 </div>
 <div class="w-full p-3">
@@ -12,10 +12,10 @@
       <table class="w-full p-5 text-gray-700">
         <thead>
           <tr>
-            <th scope="col" class="text-left text-blue-900">ID</th>
-            <th scope="col" class="text-left text-blue-900">Name</th>
-            <th scope="col" class="text-left text-blue-900">Email</th>
-            <th scope="col" class="text-left text-blue-900">created_at</th>
+            <th scope="col" class="text-left text-blue-900"><%= t('.id') %></th>
+            <th scope="col" class="text-left text-blue-900"><%= t('.name') %></th>
+            <th scope="col" class="text-left text-blue-900"><%= t('.email') %></th>
+            <th scope="col" class="text-left text-blue-900"><%= t('.created_at') %></th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -23,7 +23,6 @@
           <%= render @users %>
         </tbody>
       </table>
-      <p class="py-2"><a href="#">See More issues...</a></p>
     </div>
   </div>
 </div>

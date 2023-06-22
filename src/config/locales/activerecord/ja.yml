@@ -2,6 +2,8 @@ ja:
   activerecord:
     models:
       user: "ユーザー"
+      level_part: "レベル・パート"
+      multiple_choice_question: "選択問題"
     attributes:
       user:
         name: "ニックネーム"
@@ -11,3 +13,10 @@ ja:
         role: "役割"
         created_at: "登録日時"
         updated_at: "更新日時"
+        avatar: "アバター"
+      level_part:
+        level: "レベル"
+        part: "パート"
+        icon: "アイコン"
+      multiple_choice_question:
+        choice: "選択肢%{num}"
