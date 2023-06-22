@@ -2,45 +2,34 @@
   <div class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
     <ul class="list-reset flex flex-row md:flex-col pt-3 md:py-3 px-1 md:px-2 text-center md:text-left">
       <li class="mr-3 flex-1">
-        <%= link_to "Users", admin_users_path, class: "block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500" %>
+        <%= link_to t('defaults.admin.sidebar.users') , admin_users_path, class: "block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500" %>
       </li>
       <li class="mr-3 flex-1">
-        <%= link_to 'Multiple Choice Questions', admin_multiple_choice_top_path, class:"block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500" %>
+        <%= link_to t('defaults.admin.sidebar.multiple_choice_questions'), admin_multiple_choice_top_path, class:"block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500" %>
       </li>
       <li class="mr-3 flex-1">
-        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
-          <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">Matching Questions</span>
-        </a>
+        <%= link_to t('defaults.admin.sidebar.matching_questions'), "#", class:"block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500" %>
       </li>
       <li class="mr-3 flex-1">
-        <%= link_to "Tags", admin_tags_path, class: "block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-blue-600" %>
+        <%= link_to t('defaults.admin.sidebar.tags'), admin_tags_path, class: "block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-blue-600" %>
       </li>
       <li class="mr-3 flex-1">
-        <%= link_to "Level/Parts", admin_level_parts_path, class: "block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500" %>
+        <%= link_to t('defaults.admin.sidebar.level_parts'), admin_level_parts_path, class: "block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500" %>
       </li>
       <li class="mr-3 flex-1">
-        <a href="#" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-400">
-          <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">Videos</span>
-        </a>
-      </li>
-
-      <li class="mr-3 flex-1">
-        <a href="#" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-yellow-400">
-          <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">Trainings</span>
-        </a>
+        <%= link_to t('defaults.admin.sidebar.videos'), "#", class:"block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-400" %>
       </li>
       <li class="mr-3 flex-1">
-        <a href="#" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-white">
-          <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">Lessons/Videos</span>
-        </a>
+        <%= link_to t('defaults.admin.sidebar.training'), "#", class:"block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-yellow-400" %>
       </li>
       <li class="mr-3 flex-1">
-        <a href="#" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-blue-600">
-          <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">Profile</span>
-        </a>
+        <%= link_to t('defaults.admin.sidebar.lessons'), "#", class:"block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-white"%>
       </li>
       <li class="mr-3 flex-1">
-        <%= link_to "Logout", admin_logout_path, method: :delete, class: "block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-400" %>
+        <%= link_to t('defaults.admin.sidebar.profile'), "#", class:"block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-blue-600"%>
+      </li>
+      <li class="mr-3 flex-1">
+        <%= link_to t('defaults.admin.sidebar.logout') , admin_logout_path, method: :delete, class: "block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-400" %>
       </li>
     </ul>
   </div>

@@ -9,6 +9,21 @@ ja:
     games: "ゲーム一覧"
     videos: "動画一覧"
     listen: "2つの単語の音を聞こう! そして次へ!"
+    search: "検索"
+    see_results: "結果を見る！"
+    profile: "プロフィールページ"
+    admin:
+      sidebar:
+        users: "ユーザー"
+        multiple_choice_questions: "選択問題"
+        matching_questions: "マッチング問題"
+        tags: "タグ"
+        level_parts: "レベル・パート"
+        videos: "ビデオ"
+        profile: "プロフィール"
+        training: "トレーニング一覧"
+        lessons: "レッスン一覧"
+        logout: "ログアウト"
     message:
       please_login: "ログインしてください"
       edit: "%{item}を編集する"
@@ -76,12 +91,20 @@ ja:
       login_with_email: "メールアドレスでログイン!"
       welcome_back: "Welcome back!!"
   multiple_choice_questions:
+    top:
+      title: "Level-Part"
     start_page:
       start: "スタート！！"
+      no_question: "問題がありません"
+      to_index: "レベル一覧に戻る"
+    show:
+      title: "Level-Part:%{level}-%{part}"
+      question: "Question"
     answer:
       next_question: "次の問題へ！"
       finish: "終わって結果を見る！"
     result_page:
+      title: "Level-Part:%{level}-%{part}"
       your_score: "%{name}さんの得点は、%{full_score}点中%{score}点でした!"
       tweet: "ツイッターで結果を共有する!"
       to_top_page: "トップページへ!"
@@ -115,6 +138,12 @@ ja:
     users:
       index:
         title: 'ユーザー一覧'
+        id: "ID"
+        name: "ニックネーム"
+        email: "メールアドレス"
+        created_at: "作成日時"
+      edit:
+        title: 'ユーザー編集'
       show:
         title: '掲示板詳細'
     user_sessions:
@@ -125,3 +154,42 @@ ja:
         fail: 'ログインに失敗しました'
       destroy:
         success: 'ログアウトしました'
+    level_parts:
+      index:
+        title: "レベル・パート一覧"
+        create: "新規作成"
+      new:
+        title: "レベル・パートの作成"
+      edit:
+        title: "レベル・パートの編集"
+      show:
+        title: "レベル・パートの詳細"
+        create: "新規作成"
+        to_edit: "編集へ"
+    multiple_choice_questions:
+      index:
+        body: "答え"
+        choice_1: "選択肢1"
+        choice_2: "選択肢2"
+        choice_3: "選択肢3"
+        level: "レベル"
+        part: "パート"
+        title: "選択問題一覧"
+        choice_none: "選択肢はありません"
+        no_question: "問題はありません"
+      show:
+        question: "Question"
+        to_edit: "選択問題の編集へ"
+      edit:
+        title: "選択問題の編集"
+      new:
+        title: "選択問題の作成"
+      top:
+        level_part: "Level-Part"
+    tags:
+      index:
+        title: "Tag一覧"
+        create: "新規作成"
+        body: "Tag内容"
+      new:
+        title: "Tagの新規作成"

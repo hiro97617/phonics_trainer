@@ -1,3 +1,4 @@
 <h1><%= "#{@level_part.level}-#{@level_part.part}" %></h1>
 
-<%= link_to "Create multiple choice questions", new_admin_level_part_multiple_choice_question_path(@level_part) %>
+<%= link_to t('.create') , new_admin_level_part_multiple_choice_question_path(@level_part) %>
+<%= link_to t('.to_edit') , edit_admin_level_part_multiple_choice_question_path(@level_part) %>

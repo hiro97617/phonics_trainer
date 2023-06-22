@@ -1,4 +1,4 @@
-<%= form_with(model: Tag.new, url: admin_tags_path, class:"grid grid-cols-1 gap-6 mt-8 md:grid-cols-2", local: true) do |f| %>
+<%= form_with(model: @tag, url: admin_tags_path, class:"grid grid-cols-1 gap-6 mt-8 md:grid-cols-2", local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div>
     <%= f.label :body, 'Tag', class:"block mb-2 text-sm text-gray-600 dark:text-gray-200" %>

@@ -2,6 +2,6 @@
   <%= link_to multiple_choice_question_path(@mulitple_choice_question.next) %>
 <% else %>
   <%= form_with url: level_part_multiple_choice_finish, method: :post, local: true do |f| %>
-    <%= f.submit "結果見る！", class: "px-4 py-2 rounded-md text-sm font-medium border shadow focus:outline-none focus:ring transition text-green-600 bg-green-50 border-green-200 hover:bg-green-100 active:bg-green-200 focus:ring-green-300" %>
+    <%= f.submit t('defaults.see_results'), class: "px-4 py-2 rounded-md text-sm font-medium border shadow focus:outline-none focus:ring transition text-green-600 bg-green-50 border-green-200 hover:bg-green-100 active:bg-green-200 focus:ring-green-300" %>
   <% end %>
 <% end %>

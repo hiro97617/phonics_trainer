@@ -1,6 +1,6 @@
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create Multiple Choice Question</h2>
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"><%= t('.title') %> </h2>
   </div>
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
     <%= form_with model: @register_multiple_choice_question_form, url: admin_level_part_multiple_choice_questions_path, multipart: true, local: true do |f| %>

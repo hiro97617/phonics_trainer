@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1>ユーザー編集</h1>
+      <h1><%= t('.title') %></h1>
       <%= form_with model: @user, url: admin_user_path(@user), local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">

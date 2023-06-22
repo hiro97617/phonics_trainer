@@ -1,5 +1,5 @@
 <div class="py-16 bg-sky-50 w-full" id="result-background">
-  <p class="text-4xl text-center text-black">Level-Part:<%= @level_part.level %>-<%= @level_part.part %> </p>
+  <p class="text-4xl text-center text-black"><%= t('.title', level: @level_part.level, part: @level_part.part) %> </p>
   <div class="container m-auto px-8 py-6 bg-green-100 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0">
     <div class="grid grid-cols-1 place-items-center mb-4">
       <div class="w-3/4 m-6">
