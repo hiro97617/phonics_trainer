@@ -10,6 +10,7 @@ FROM ruby:3.0.1
 # Be sure to update the nodejs install command if the base image OS is updated.
 # [END cloudrun_rails_base_image]
 # Install vim editor in order to edit credential files.
+ENV RAILS_ENV=production
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev vim
 
 RUN (curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | apt-key add -) && \
@@ -37,19 +38,7 @@ RUN gem install bundler && \
 
 # Copy application code to the container image
 #以下のコマンドは本番環境実行時に行う。
-#COPY ./src /app
+COPY start.sh /start.sh
+RUN chmod 744 /start.sh
+CMD ["sh", "/start.sh"]
 
-#ENV RAILS_ENV=production
-#ENV RAILS_SERVE_STATIC_FILES=true
-# Redirect Rails log to STDOUT for Cloud Run to capture
-#ENV RAILS_LOG_TO_STDOUT=true
-#[START cloudrun_rails_dockerfile_key]
-#ARG MASTER_KEY
-#ENV RAILS_MASTER_KEY=${MASTER_KEY}
-#[END cloudrun_rails_dockerfile_key]
-
-# pre-compile Rails assets with master key
-#RUN bundle exec rails assets:precompile
-
-#EXPOSE 8080
-#CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "8080"]
