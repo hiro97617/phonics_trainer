@@ -5,37 +5,37 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-src/.bundle
+.bundle
 
 # Ignore all logfiles and tempfiles.
-src/log/*
-src/tmp/*
-!src/log/.keep
-!src/tmp/.keep
+log/*
+tmp/*
+!/log/.keep
+!/tmp/.keep
 
 # Ignore pidfiles, but keep the directory.
-src/tmp/pids/*
-!src/tmp/pids/
-!src/tmp/pids/.keep
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
 
 # Ignore uploaded files in development.
-src/storage/*
-!src/storage/.keep
-src/tmp/storage/*
-!src/tmp/storage/
-!src/tmp/storage/.keep
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
 
-src/public/assets
-src/public/uploads
+/public/assets
+/public/uploads
 
 # Ignore master key for decrypting credentials and more.
-src/config/master.key
+/config/master.key
 
-src/app/assets/builds/*
-!src/app/assets/builds/.keep
+/app/assets/builds/*
+!/app/assets/builds/.keep
 
-src/node_modules
+/node_modules
 
-src/db/development.sqlite3
-src/db/test.sqlite3
-src/public/packs
+/db/development.sqlite3
+/db/test.sqlite3
+/public/packs
