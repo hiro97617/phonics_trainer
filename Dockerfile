@@ -10,7 +10,7 @@ FROM ruby:3.0.1
 # Be sure to update the nodejs install command if the base image OS is updated.
 # [END cloudrun_rails_base_image]
 # Install vim editor in order to edit credential files.
-ENV RAILS_ENV=production
+#ENV RAILS_ENV=production
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev vim
 
 RUN (curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | apt-key add -) && \
@@ -23,8 +23,8 @@ RUN set -x && apt-get update -y -qq && apt-get install -yq yarn
 
 
 WORKDIR /app
-COPY ./src/Gemfile /app/Gemfile
-COPY ./src/Gemfile.lock /app/Gemfile.lock
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
 
 #bundle lock ~ bundle config 'test'は本番環境のデプロイ時に実行
 
@@ -38,7 +38,7 @@ RUN gem install bundler && \
 
 # Copy application code to the container image
 #以下のコマンドは本番環境実行時に行う。
-COPY start.sh /start.sh
-RUN chmod 744 /start.sh
-CMD ["sh", "/start.sh"]
+#COPY start.sh /start.sh
+#RUN chmod 744 /start.sh
+#CMD ["sh", "/start.sh"]
 

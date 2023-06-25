@@ -10,12 +10,12 @@ services:
     restart: always
   web: &app
     build: .
-    command: /bin/sh -c "rm -f /src/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: /bin/sh -c "rm -f /tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     volumes:
-      - ./src:/app
+      - .:/app
     ports:
       - "3000:3000"
     restart: always
@@ -32,8 +32,8 @@ services:
       - RAILS_ENV=development
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
     volumes:
-      - ./src:/app
-      - ./src/node_modules:/app/node_modules
+      - .:/app
+      - ./node_modules:/app/node_modules
     ports:
       - "3035:3035"
 volumes:
