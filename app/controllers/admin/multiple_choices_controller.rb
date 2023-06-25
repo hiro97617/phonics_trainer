@@ -36,4 +36,3 @@ class Admin::MultipleChoicesController < Admin::BaseController
     @multiple_choice = MultipleChoice.find(params[:id])
   end
 end
-end
