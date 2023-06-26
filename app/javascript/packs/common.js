@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 function previewImage() {
   const target = this.event.target;
   const file = target.files[0];
@@ -12,3 +13,8 @@ function previewImage() {
       reader.readAsDataURL(file);
   }
 }
+
+function previewImageWithId(preview){
+  previewImage(preview)
+}
+});

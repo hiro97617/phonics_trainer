@@ -134,6 +134,7 @@ ja:
     show:
       title: "プロフィール"
       edit: "編集する"
+      avatar: "アバター"
   admin:
     users:
       index:

@@ -3,10 +3,12 @@
     <%= render 'shared/error_messages', object: f.object %>
     <div id="edit-profile-page" class="container max-w-5xl mx-auto m-8 pt-16">
       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar, onchange:'previewFileWithId(preview)', accept:'image/*' %>
-        <%= f.hidden_field :avatar_cache %>
+        <div class="mb-2 text-black text-xl mt-10 space-x-4">
+          <%= f.label :avatar,class:"mb-2 ml-4" %>
+          <i class="fa fa-user-circle mr-4"></i><br/>
+          <%= f.file_field :avatar, onchange:'previewFileWithId(preview)', accept:'image/*' %>
+          <%= f.hidden_field :avatar_cache %>
+        </div>
         <div class="relative">
           <%= image_tag @user.avatar.url, class: "rounded-full border-2 border-gray-600", id: 'preview', size: "400x400" %>
         </div>
