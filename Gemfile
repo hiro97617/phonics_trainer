@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 gem 'mini_magick'
 gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 
 
