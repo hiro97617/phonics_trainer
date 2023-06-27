@@ -158,15 +158,15 @@ ja:
     level_parts:
       index:
         title: "レベル・パート一覧"
-        create: "新規作成"
+        create: "レベル・パートの新規作成"
       new:
         title: "レベル・パートの作成"
       edit:
         title: "レベル・パートの編集"
       show:
         title: "レベル・パートの詳細"
-        create: "新規作成"
-        to_edit: "編集へ"
+        create_multiple_choice_questions: "選択問題の新規作成"
+        to_edit: "レベル・パートの編集へ"
     multiple_choice_questions:
       index:
         body: "答え"
