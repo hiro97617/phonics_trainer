@@ -1,6 +1,6 @@
 <div class="bg-gray-800 pt-3">
   <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-      <h1 class="font-bold pl-2"><%= t('.title') %> </h1>
+      <h1 class="font-bold pl-2"><%= t('.title') %></h1>
   </div>
 </div>
 <div class="w-full p-3">
@@ -22,7 +22,7 @@
             </tr>
           </thead>
           <tbody>
-            <%= render @multiple_choice_questions, multiple_choice_question: @multiple_choice_question %>
+            <%= render @multiple_choice_questions, collection: @multiple_choice_questions %>
           </tbody>
         </table>
       <% else %>

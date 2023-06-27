@@ -2,7 +2,7 @@
   <% @level_parts.each do |level_part| %>
       <div class="container m-auto px-8 py-6 bg-purple-200 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0">
       <%= link_to admin_level_part_multiple_choice_questions_path(level_part) do %>
-        <div class="grid grid-cols-1 place-items-center mb-4">
+        <div class="grid grid-cols-3 place-items-center mb-4">
           <div>
             <%= image_tag level_part.icon.url, class:"h-auto max-w-full rounded-lg" %>
           </div>
