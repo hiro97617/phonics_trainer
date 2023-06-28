@@ -111,6 +111,9 @@ ja:
       to_next_part: "次のパートへ!"
       to_next_level: "次のレベルへ!"
       congratulations: "おめでとう！！これで全部クリアだよ！すごいすごい！！"
+  dashboards:
+    top:
+      temporary_info: "ただいま、改装中です！！ひとまず、PhonicsTrainerの遊び方とゲーム一覧のところをクリックしてください！"
   explanations:
     static_page:
       main_title:

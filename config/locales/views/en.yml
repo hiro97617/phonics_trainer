@@ -68,6 +68,9 @@ en:
       title: 'Login'
       to_register_page: 'Create User'
       password_forget: 'Forgot Password?'
+    dashboards:
+    top:
+      temporary_info: "I'm creating this page! Please wait for a second! If you wanna use this app, click the links, 'How to play?' and 'Games!'!"
   multiple_choice_questions:
     answer:
       next_question: "次の問題へ！"
