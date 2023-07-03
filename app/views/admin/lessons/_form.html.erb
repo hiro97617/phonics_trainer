@@ -1,0 +1,9 @@
+<%= form_with(model: lesson, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :phoneme %>
+    <%= f.text_field :phoneme %>
+
+    <%= f.label :content %>
+    <%= f.rich_text_area :content %>
+  </div>
+<% end %>
