@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_21_073445) do
+ActiveRecord::Schema.define(version: 2023_06_30_074714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 2023_06_21_073445) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["multiple_choice_challenger_id"], name: "index_incorrect_questions_on_multiple_choice_challenger_id"
     t.index ["multiple_choice_question_id"], name: "index_incorrect_questions_on_multiple_choice_question_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "phoneme", null: false
+    t.bigint "level_part_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["level_part_id"], name: "index_lessons_on_level_part_id"
   end
 
   create_table "level_parts", force: :cascade do |t|
@@ -102,6 +110,7 @@ ActiveRecord::Schema.define(version: 2023_06_21_073445) do
   add_foreign_key "correct_questions", "multiple_choice_questions"
   add_foreign_key "incorrect_questions", "multiple_choice_challengers"
   add_foreign_key "incorrect_questions", "multiple_choice_questions"
+  add_foreign_key "lessons", "level_parts"
   add_foreign_key "multiple_choice_challengers", "level_parts"
   add_foreign_key "multiple_choice_challengers", "users"
   add_foreign_key "multiple_choice_question_tags", "multiple_choice_questions"

@@ -1,0 +1,17 @@
+<div class="bg-white grid grid-cols-5">
+  <% @level_parts.each do |level_part| %>
+    <div class="container m-auto px-8 py-6 bg-purple-200 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0">
+      <%= link_to level_part_lessons_path(level_part) do %>
+        <div class="grid grid-cols-1 place-items-center mb-4">
+          <div>
+            <%= image_tag level_part.icon.url, class:"h-auto max-w-full rounded-lg" %>
+          </div>
+          <div>
+            <p class="text-xl text-center"><%= t('.title') %> </p>
+            <p class="text-xl text-center"><%= level_part.level %>- <%= level_part.part %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
