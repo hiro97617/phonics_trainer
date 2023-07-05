@@ -1,0 +1,13 @@
+<tr>
+  <td>
+    <%= lesson.title %>
+  </td>
+  <td>
+    <%= lesson.points %>
+  </td>
+  <td>
+    <%= link_to t('defaults.show'), admin_lesson_path(lesson), class: 'btn btn-imfo' %>
+    <%= link_to t('defaults.edit'), edit_admin_lesson_path(lesson), class: 'btn btn-success' %>
+    <%= link_to t('defaults.delete'), admin_lesson_path(lesson), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger' %>
+  </td>
+</tr>

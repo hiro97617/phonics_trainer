@@ -4,3 +4,7 @@ ja:
       role:
         general: '一般'
         admin: '管理'
+    lesson:
+      vibrate:
+        voiced: "有声音"
+        voiceless: "無声音"

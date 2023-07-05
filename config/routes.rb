@@ -30,14 +30,17 @@ Rails.application.routes.draw do
     namespace :admin do
       root to: 'dashboards#index'
       resources :users, only: %i[index edit update destroy]
-      resources :level_parts, only: %i[index new create edit update destroy]
-      resources :level_parts, only: %i[show] do
+      resources :level_parts, only: %i[show index new create edit update destroy] do
         resources :multiple_choice_questions, only: %i[index new create]
         resources :lessons, only: %i[index new create]
       end
       get 'multiple_choice_questions/top', to: 'multiple_choice_questions#top', as: 'multiple_choice_top'
+      get 'lessons', to: 'lessons#top'
       resources :multiple_choice_questions, only: %i[show edit update destroy]
-      resources :lessons, only: %i[show edit update destroy]
+      resources :lessons, only: %i[show edit update destroy] do
+        resources :embeds, only: %i[create], shallow: true
+      end
+      resources :embeds, only: %i[edit update destroy]
       resources :tags, only: %i[index new create edit update destroy]
       resources :dashboards, only: %i[index]
       get 'login', to: 'user_sessions#new', as: 'login'

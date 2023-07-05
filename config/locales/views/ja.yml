@@ -37,6 +37,7 @@ ja:
       password_minimum: "半角英数字6字以上"
       same_password: "パスワードと同じものを入れる"
       forget_password: "パスワードを忘れた方はこちら"
+      not_present: "%{item}がありません"
       create: "新規作成"
     helpers:
       submit:
@@ -170,6 +171,10 @@ ja:
         title: "レベル・パートの詳細"
         create_multiple_choice_questions: "選択問題の新規作成"
         to_edit: "レベル・パートの編集へ"
+    lessons:
+      index:
+        title: "Level-Part:%{level}-%{part}のLesson"
+        create: "新規作成ページへ"
     multiple_choice_questions:
       index:
         body: "答え"
