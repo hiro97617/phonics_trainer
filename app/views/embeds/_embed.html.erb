@@ -1,0 +1,17 @@
+<tr id="embed-<%= embed.id %>">
+  <td>
+    <div id="js-lesson-<%= embed.id %>">
+      <label class="text-black text-xl font-bold"><%= Embed.human_attribute_name(:description) %></label>
+      <p class="text-black text-xl font-bold"><%= embed.description %></p>
+    </div>
+    <div id="js-lesson-<%= embed.id %>">
+      <% if embed.youtube? %>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= embed.extract_id_from_url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <% elsif embed.instagram? %>
+        <iframe width="560" height="315" src="<%= embed.media_url %>" title="Instagram media player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <% else %>
+        <p class="text-black">表示するメディアはありません</p>
+      <% end %>
+    </div>
+  </td>
+</tr>

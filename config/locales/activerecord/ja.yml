@@ -4,6 +4,7 @@ ja:
       user: "ユーザー"
       level_part: "レベル・パート"
       multiple_choice_question: "選択問題"
+      lesson: "レッスン"
     attributes:
       user:
         name: "ニックネーム"
@@ -20,3 +21,10 @@ ja:
         icon: "アイコン"
       multiple_choice_question:
         choice: "選択肢%{num}"
+      lesson:
+        title: "タイトル"
+        description: "めあて"
+        audio: "音声"
+        alphabet_name: "アルファベットの音"
+        vibrate: "有声音か無声音か"
+        points: "ポイント"

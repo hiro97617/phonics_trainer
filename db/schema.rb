@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_30_074714) do
+ActiveRecord::Schema.define(version: 2023_07_05_010756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2023_06_30_074714) do
     t.index ["multiple_choice_question_id"], name: "index_correct_questions_on_multiple_choice_question_id"
   end
 
+  create_table "embeds", force: :cascade do |t|
+    t.integer "media_type"
+    t.string "media_url"
+    t.text "description"
+    t.bigint "lesson_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_embeds_on_lesson_id"
+  end
+
   create_table "incorrect_questions", force: :cascade do |t|
     t.bigint "multiple_choice_challenger_id", null: false
     t.bigint "multiple_choice_question_id", null: false
@@ -34,10 +44,15 @@ ActiveRecord::Schema.define(version: 2023_06_30_074714) do
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string "phoneme", null: false
     t.bigint "level_part_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "vibrate"
+    t.string "audio"
+    t.string "alphabet_name"
+    t.string "title", null: false
+    t.text "description"
+    t.string "points", default: [], array: true
     t.index ["level_part_id"], name: "index_lessons_on_level_part_id"
   end
 
@@ -108,6 +123,7 @@ ActiveRecord::Schema.define(version: 2023_06_30_074714) do
 
   add_foreign_key "correct_questions", "multiple_choice_challengers"
   add_foreign_key "correct_questions", "multiple_choice_questions"
+  add_foreign_key "embeds", "lessons"
   add_foreign_key "incorrect_questions", "multiple_choice_challengers"
   add_foreign_key "incorrect_questions", "multiple_choice_questions"
   add_foreign_key "lessons", "level_parts"

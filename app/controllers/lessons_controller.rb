@@ -11,5 +11,6 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @embeds = @lesson.embeds
   end
 end

@@ -1,3 +1,30 @@
-
-
-<%= render 'form' %>
+<%= form_with(model: @lesson, url: admin_level_part_lessons_path  ,local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <div class="mb-6">
+      <%= f.label :title, Lesson.human_attribute_name(:title) ,class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white"%>
+      <%= f.text_field :title, class: "block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+    </div>
+    <div class="mb-6">
+      <%= f.label :desctiption, Lesson.human_attribute_name(:description) ,class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white"%>
+      <%= f.text_area :description, row: "4" ,class: "block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+    </div>
+    <div class="mb-6">
+      <%= f.label :points, Lesson.human_attribute_name(:points) ,class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white"%>
+      <%= f.text_field :points, class: "block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder:"区切る場合は,を入れる" %>
+    </div>
+    <div class="mb-6">
+      <%= f.label :audio, Lesson.human_attribute_name(:audio), class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+      <%= f.file_field :audio %>
+    </div>
+    <div class="mb-6">
+      <%= f.label :alphabet_name, Lesson.human_attribute_name(:alphabet_name), class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+      <%= f.file_field :alphabet_name %>
+    </div>
+    <div class="mb-6">
+      <%= f.label :vibrate, Lesson.human_attribute_name(:vibrate), class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+      <%= f.select :vibrate, Lesson.vibrates.keys.to_a, {} %>
+    </div>
+  </div>
+  <%= f.submit class: "flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50" %>
+<% end %>

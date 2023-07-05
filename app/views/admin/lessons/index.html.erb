@@ -1,0 +1,30 @@
+<div class="bg-gray-800 pt-3">
+  <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
+    <h1 class="font-bold pl-2"><%= t('.title', level: @level_part.level, part: @level_part.part ) %> </h1>
+  </div>
+</div>
+<div class="w-full p-3">
+  <div class="bg-white border rounded shadow">
+    <div class="col-md-12 border-b p-3 m-8">
+      <%= link_to t('.create'), new_admin_level_part_lesson_path, class:"p-3 font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
+    </div>
+    <div class="p-5 m-8">
+      <% if @lessons.present? %>
+        <table class="w-full p-5 text-gray-700">
+          <thead>
+            <tr>
+              <th scope="col" class="text-left text-blue-900"><%= Lesson.human_attribute_name(:title) %></th>
+              <th scope="col" class="text-left text-blue-900"><%= Lesson.human_attribute_name(:points) %></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @lessons %>
+          </tbody>
+        </table>
+      <% else %>
+        <p class="text-black"><%= t('defaults.message.not_present', item: Lesson.model_name.human ) %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container m-auto px-8 py-6 bg-purple-200 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0">
+  <%= link_to lesson_path(lesson) do %>
+    <div class="grid grid-cols-1 place-items-center mb-4">
+      <div>
+        <p class="text-xl text-center"><%= lesson.title %></p>
+        <p class="text-xl text-center"><%= lesson.level_part.level %>- <%= lesson.level_part.part %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

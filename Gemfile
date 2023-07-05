@@ -27,7 +27,7 @@ gem 'mini_magick'
 gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
 gem 'fog-aws'
 gem 'dotenv-rails'
-
+gem 'enum_help'
 
 
 # Reduces boot times through caching; required in config/boot.rb
