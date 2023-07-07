@@ -1,71 +1,69 @@
-<div class="flex flex-col">
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <table class="min-w-full text-left">
-          <tr class="border-b bg-blue-100 border-b">
-            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-              <%= t(Lesson.human_attribute_name(:title)) %>
-            </th>
-            <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
-              <%= @lesson.title %>
-            </td>
-          </tr>
-          <tr class="border-b bg-blue-100 border-b">
-            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-              <%= t(Lesson.human_attribute_name(:description)) %>
-            </th>
-            <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
-              <%= @lesson.description %>
-            </td>
-          </tr>
-        </table>
+
+<div class="bg-white p-8">
+  <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="overflow-hidden border-8 border-solid border-red-600">
+          <p class="text-4xl text-black font-bold m-4 border-solid border-red-400"><%= t('.title') %> : <%= @lesson.title %></p>
+          <p class="text-4xl text-black font-bold m-4 border-solid border-red-400"><%= t(Lesson.human_attribute_name(:description)) %> : <%= @lesson.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8 m-12 pb-12 border-black border-b">
+      <p class="text-4xl text-black text-center ml-8 border-8 border-solid border-blue-600 w-56"><%= t('.point') %></p>
+      <p class="text-2xl text-black ml-8 my-4"><%= t('.point_description') %></p>
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+          <table class="table-auto border-collapse border-4 border-black">
+            <thead>
+              <tr class="bg-blue-100">
+                <th scope="col" class="border-2 border-black text-lg font-medium text-gray-900 px-6 py-4">
+                  <%= t(Lesson.human_attribute_name(:vibrate)) %>
+                </th>
+                <th scope="col" class="border-2 border-black text-lg font-medium text-gray-900 px-6 py-4">
+                  <%= t(Lesson.human_attribute_name(:audio)) %>
+                </th>
+                <th scope="col" class="border-2 border-black text-lg font-medium text-gray-900 px-6 py-4">
+                  <%= t(Lesson.human_attribute_name(:alphabet_name)) %>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-blue-200">
+                <td class="border-2 border-black text-lg text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                  <%= @lesson.vibrate_i18n %>
+                </td>
+                <td class="border-2 border-black text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                  <% if @lesson.audio.file.nil? %>
+                    <%= t('defaults.message.not_present', item: Embed.human_attribute_name(:audio) ) %>
+                  <% else %>
+                    <p class="text-lg"><%= t('.listen') %></p>
+                    <%= @lesson.audio.url %>
+                  <% end %>
+                </td>
+                <td class="border-2 border-black text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                  <% if @lesson.alphabet_name.file.nil? %>
+                    <%= t('defaults.message.not_present', item: Embed.human_attribute_name(:alphabet_name) ) %>
+                  <% else %>
+                    <p class="text-lg"><%= t('.listen') %></p>
+                    <%= @lesson.alphabet_name.url %>
+                  <% end %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <table class="min-w-full text-center">
-          <thead class="border-b">
-            <tr class="border-b bg-blue-100 border-b">
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                <%= t(Lesson.human_attribute_name(:vibrate)) %>
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                <%= t(Lesson.human_attribute_name(:audio)) %>
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                <%= t(Lesson.human_attribute_name(:alphabet_name)) %>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b bg-blue-300 border-blue-200">
-              <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
-                <%= @lesson.vibrate_i18n %>
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                <% if @lesson.audio.file.nil? %>
-                  <%= t('defaults.message.not_present', item: Embed.human_attribute_name(:audio) ) %>
-                <% else %>
-                  <%= @lesson.audio.url %>
-                <% end %>
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                <% if @lesson.alphabet_name.file.nil? %>
-                  <%= t('defaults.message.not_present', item: Embed.human_attribute_name(:alphabet_name) ) %>
-                <% else %>
-                  <%= @lesson.alphabet_name.url %>
-                <% end %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="flex flex-auto mt-6">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <p class="text-4xl text-black text-center ml-8 border-8 border-solid border-blue-600 w-1/4"><%= t('.plus') %></p>
+        <p class="text-2xl text-black ml-8 mt-4 mb-2"><%= t('.plus_first_description') %></p>
+        <p class="text-2xl text-black ml-8 mb-4"><%= t('.plus_second_description') %></p>
+        <%= render 'embeds/embeds', embeds: @embeds %>
       </div>
     </div>
   </div>
-</div>
-<div class="flex m-6">
-  <%= render 'embeds/embeds', embeds: @embeds %>
 </div>

@@ -13,6 +13,9 @@
             <li class="text-2xl font-bold text-black pl-8 mt-8"><%= t('.first_paragraph.first_line_sentence') %></li>
             <li class="text-2xl font-bold text-black pl-8 mt-4"><%= t('.first_paragraph.second_line_sentence') %></li>
           </ul>
+          <div class="my-8 ml-4">
+            <%= link_to t('.first_paragraph.to_link'), lessons_path, class: "px-4 py-2 rounded-md text-xl font-bold border shadow focus:outline-none focus:ring transition text-purple-600 bg-purple-50 border-purple-200 hover:bg-purple-100 active:bg-purple-200 focus:ring-purple-300" %>
+          </div>
         </div>
         <div class="second-paragraph mt-8">
           <li class="text-black font-bold text-4xl"><%= t('.second_paragraph.title') %> </li>
@@ -23,6 +26,9 @@
             <li class="text-2xl font-bold text-black pl-8 mt-4"><%= t('.second_paragraph.fourth_line_sentence') %></li>
             <li class="text-2xl font-bold text-black pl-8 mt-4"><%= t('.second_paragraph.fifth_line_sentence') %></li>
           </ul>
+          <div class="my-8 ml-4">
+            <%= link_to t('.second_paragraph.to_link'), multiple_choice_questions_path, class: "px-4 py-2 rounded-md text-xl font-bold border shadow focus:outline-none focus:ring transition text-purple-600 bg-purple-50 border-purple-200 hover:bg-purple-100 active:bg-purple-200 focus:ring-purple-300" %>
+          </div>
         </div>
         <div class="third-paragraph mt-8">
           <li class="text-black font-bold text-4xl"><%= t('.third_paragraph.title') %> </li>
@@ -32,6 +38,9 @@
           </ul>
         </div>
       </ol>
+      <div class="my-8 ml-4">
+        <%= link_to t('.button.to_dashboard'), dashboard_path, class: "px-4 py-2 rounded-md text-xl font-bold border shadow focus:outline-none focus:ring transition text-purple-600 bg-purple-50 border-purple-200 hover:bg-purple-100 active:bg-purple-200 focus:ring-purple-300" %>
+      </div>
     </div>
   </div>
 </div>

@@ -114,15 +114,28 @@ ja:
       congratulations: "おめでとう！！これで全部クリアだよ！すごいすごい！！"
   dashboards:
     top:
-      temporary_info: "ただいま、改装中です！！ひとまず、PhonicsTrainerの遊び方とゲーム一覧のところをクリックしてください！"
+      main_title:
+        title: "PhonicsTrainerにようこそ!"
+        sentence: "下のボタンをクリックして楽しもう！"
+      first_paragraph:
+        title: "初めてやる人・使い方が分からない人は？"
+        to_explanations: "PhonicsTrainerの遊び方を見よう！"
+      second_paragraph:
+        title: "レッスン見ていない人は?"
+        to_lessons: "レッスン一覧に行こう！！"
+      third_paragraph:
+        title: "力試しをしたい人は?"
+        to_multiple_choice_questions: "クイズにチャレンジしよう！"
+        to_matching_questions: "新たなゲームを考え中...待っててね!"
   explanations:
     static_page:
       main_title:
         title: "PhonicsTrainerの遊び方"
       first_paragraph:
-        title: "英語の音を楽しもう!!(未実装)"
+        title: "英語の音を楽しもう!!"
         first_line_sentence: "まず大切なことは音を聞いて声に出すこと。"
         second_line_sentence: "オススメ動画・良い動画があるので、それを見て聞いて真似してみよう！"
+        to_link: "これをクリックするとページへ！"
       second_paragraph:
         title: "２択ゲームにチャレンジして遊んでみよう!!"
         first_line_sentence: "ゲーム一覧をクリック→レベル・パートをクリック→スタートをクリック!!"
@@ -130,15 +143,28 @@ ja:
         third_line_sentence: "そして、２つの単語が下に出るよ!"
         fourth_line_sentence: "どちらの単語が流れたかを当てよう!"
         fifth_line_sentence: "下に出てきたボタンをクリックして、答えのページで２つの単語を聞いて比べよう！"
+        to_link: "これをクリックすると2択ゲームのページへ！"
       third_paragraph:
         title: "もう一種類のゲームを考え中です"
         first_line_sentence: "ここに説明文を入れたいです"
         second_line_sentence: "お楽しみに!!"
+      button:
+        to_dashboard: "トップページにいく"
   profiles:
     show:
       title: "プロフィール"
       edit: "編集する"
       avatar: "アバター"
+  lessons:
+    show:
+      title: "学ぶこと"
+      goal: "めあて"
+      point: "ポイント"
+      point_description: "まずは大事なポイントをおさえよう！！"
+      listen: "下のマークを押して聞いてみよう！"
+      plus: "プラス"
+      plus_first_description: "下の動画やインスタにアクセスしよう！"
+      plus_second_description: "説明を読んで、ビデオやインスタを見てね！"
   admin:
     users:
       index:
@@ -175,6 +201,8 @@ ja:
       index:
         title: "Level-Part:%{level}-%{part}のLesson"
         create: "新規作成ページへ"
+      show:
+        title: "今回のポイント"
     multiple_choice_questions:
       index:
         body: "答え"
