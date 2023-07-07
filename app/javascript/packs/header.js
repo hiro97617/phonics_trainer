@@ -75,3 +75,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   };
 });
+
+
+var afterNavMenu = document.getElementById("after-login-nav-toggle");
+
+document.onclick = check;
+function check() {
+  const afterNavMenuDiv = document.getElementById("after-login-nav-content");
+      if (afterNavMenuDiv.classList.contains("hidden")) {
+        afterNavMenuDiv.classList.remove("hidden");
+      } else {
+        afterNavMenuDiv.classList.add("hidden");
+      }
+  }
+
+
+

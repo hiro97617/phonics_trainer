@@ -1,2 +1,32 @@
-<h1><%= t('.temporary_info') %> </h1>
-
+<div class="w-full flex flex-wrap  bg-gradient-to-r from-green-200 to-yellow-200 ">
+  <div class="w-full flex flex-col items-center px-3">
+    <div class="bg-blue-50 flex flex-col justify-start p-6">
+      <div class="title items-center">
+        <h1 class="text-black font-bold text-6xl text-center mt-8 mb-4 border-b-2">
+          <%= t('.main_title.title') %>
+        </h1>
+        <h2 class="text-black font-bold text-3xl text-left mb-12"><%= t('.main_title.sentence') %></h2>
+      </div>
+      <ol class="list-decimal list-inside">
+        <div class="first-paragraph">
+          <li class="text-black font-bold text-3xl mb-8"><%= t('.first_paragraph.title') %></li>
+          <ul class="list-disc list-inside" >
+            <li class="text-2xl font-bold text-black pl-8 mt-8"><%= link_to t('.first_paragraph.to_explanations'), explanation_path, class:"px-4 py-2 rounded-md text-xl font-bold border shadow focus:outline-none focus:ring transition text-purple-600 bg-purple-50 border-purple-200 hover:bg-purple-100 active:bg-purple-200 focus:ring-purple-300" %></li>
+          </ul>
+        </div>
+        <div class="second-paragraph mt-8">
+          <li class="text-black font-bold text-3xl mb-8"><%= t('.second_paragraph.title') %></li>
+          <ul class="list-disc list-inside" >
+            <li class="text-2xl font-bold text-black pl-8 mt-8"><%= link_to t('.second_paragraph.to_lessons'), lessons_path, class:"px-4 py-2 rounded-md text-xl font-bold border shadow focus:outline-none focus:ring transition text-purple-600 bg-purple-50 border-purple-200 hover:bg-purple-100 active:bg-purple-200 focus:ring-purple-300" %></li>
+          </ul>
+        </div>
+        <div class="third-paragraph mt-8">
+          <li class="text-black font-bold text-3xl mb-8"><%= t('.third_paragraph.title') %> </li>
+          <ul class="list-disc list-inside" >
+            <li class="text-2xl font-bold text-black pl-8 mt-8"><%= link_to t('.third_paragraph.to_multiple_choice_questions'), multiple_choice_questions_path, class:"mb-12 px-4 py-2 rounded-md text-xl font-bold border shadow focus:outline-none focus:ring transition text-purple-600 bg-purple-50 border-purple-200 hover:bg-purple-100 active:bg-purple-200 focus:ring-purple-300" %><br/></li>
+          </ul>
+        </div>
+      </ol>
+    </div>
+  </div>
+</div>
