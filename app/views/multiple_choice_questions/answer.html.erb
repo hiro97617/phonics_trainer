@@ -2,6 +2,13 @@
   <p class="text-4xl text-center text-black">Level-Part:<%= @level_part.level %>-<%= @level_part.part %> </p>
   <div class="container m-auto px-8 py-6 bg-blue-100 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0">
     <p class="text-4xl text-center" id="title">Question</p>
+    <div id="judgement">
+      <% if @judgement.correct? %>
+        <%= render 'multiple_choice_questions/templates/correct_sign' %>
+      <% else %>
+        <%= render 'multiple_choice_questions/templates/incorrect_sign' %>
+      <% end %>
+    </div>
     <div id="js-multiple-choice-answer-for-quiz-<%= @multiple_choice_question.id %>">
       <div class="grid grid-cols-1 place-items-center mb-4">
         <p class="text-5xl text-center" id="word"><%= @multiple_choice_question.body %></p>
@@ -57,7 +64,7 @@
     </div>
     <div class="w-full place-items-center">
       <% if @next.nil? %>
-        <%= form_with url: level_part_multiple_choice_finish_path(@level_part), method: :post, local: true do |f| %>
+        <%= form_with url:level_part_multiple_choice_question_path(@level_part, @multiple_choice_question), method: :patch, local: true do |f| %>
           <%= f.submit t('.finish'), class:"w-1/3 px-4 py-2 m-6 rounded-md text-lg font-medium border shadow focus:outline-none focus:ring transition text-yellow-600 bg-yellow-50 border-yellow-200 hover:bg-yellow-100 active:bg-yellow-200 focus:ring-yellow-300" %>
         <% end %>
       <% else %>

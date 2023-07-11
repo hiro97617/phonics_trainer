@@ -1,3 +1,0 @@
-$("#judgement").append("<%= j(render('multiple_choice_questions/templates/incorrect_sign')) %>");
-$("#js-choice-button-for-quiz-<%= @multiple_choice_question.id %>").replaceWith("<%= j(render('multiple_choice_questions/templates/answer', multiple_choice_question: @multiple_choice_question)) %>");
-$("#js-multiple-choice").after("<%= j(render('multiple_choice_questions/templates/answer_sound')) %>");

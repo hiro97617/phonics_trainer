@@ -7,7 +7,7 @@ ja:
     logout: 'ログアウト'
     how_to_play: "PhonicsTrainerの遊び方"
     games: "ゲーム一覧"
-    videos: "動画一覧"
+    videos: "レッスン一覧"
     listen: "2つの単語の音を聞こう! そして次へ!"
     search: "検索"
     see_results: "結果を見る！"
@@ -93,8 +93,10 @@ ja:
       welcome_back: "Welcome back!!"
   multiple_choice_questions:
     top:
+      top_title: "2択ゲーム一覧"
+      kind: "２択ゲーム"
       title: "Level-Part"
-    start_page:
+    new:
       start: "スタート！！"
       no_question: "問題がありません"
       to_index: "レベル一覧に戻る"
@@ -156,6 +158,10 @@ ja:
       edit: "編集する"
       avatar: "アバター"
   lessons:
+    top:
+      top_title: "レッスン一覧"
+      kind: "レッスン"
+      title: "Level-Part"
     show:
       title: "学ぶこと"
       goal: "めあて"
