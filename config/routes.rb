@@ -14,18 +14,16 @@ Rails.application.routes.draw do
     get 'lessons', to: "lessons#top"
     resources :users, only: %i[new create]
     resources :level_parts, only: %i[show] do
-      resources :multiple_choice_questions, only: %i[index show], name_prefix: "multiple_choice_"
+      resources :multiple_choice_questions, only: %i[new create index show update], name_prefix: "multiple_choice_"
       resources :lessons, only: %i[index]
-      get 'multiple_choice/start', to: 'multiple_choice_questions#start_page'
       get 'multiple_choice/result', to: 'multiple_choice_questions#result_page'
-      post 'multiple_choice/start', to: 'multiple_choice_questions#start'
-      post 'multiple_choice/finish', to: 'multiple_choice_questions#finish'
     end
     resources :lessons, only: %i[show]
     resources :multiple_choice_questions, only: %i[] do
-      resources :correct_questions, only: %i[create], name_prefix: "multiple_choice_correct_"
-      resources :incorrect_questions, only: %i[create], name_prefix: "multiple_choice_incorrect_"
       get 'answer', to: 'multiple_choice_questions#answer'
+    end
+    resources :multiple_choices, only: %i[] do
+      resources :multiple_choice_judgements, only: %i[create]
     end
     namespace :admin do
       root to: 'dashboards#index'

@@ -1,18 +1,23 @@
-
-<div class="bg-white grid grid-cols-5">
-  <% @level_parts.each do |level_part| %>
-    <div class="container m-auto px-8 py-6 bg-purple-200 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0">
-      <%= link_to level_part_multiple_choice_start_path(level_part) do %>
-        <div class="grid grid-cols-1 place-items-center mb-4">
-          <div>
-            <%= image_tag level_part.icon.url, class:"h-auto max-w-full rounded-lg" %>
+<div class="bg-white">
+  <div id="multiple-choice-top" class="my-4">
+    <p class="text text-4xl text-black font-bold pt-12 pl-12"><%= t('.top_title') %></p>
+  </div>
+  <div class="grid grid-cols-5">
+    <% @level_parts.each do |level_part| %>
+      <div class="container m-auto px-8 py-6 bg-purple-200 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0">
+        <%= link_to new_level_part_multiple_choice_question_path(level_part) do %>
+          <div class="grid grid-cols-1 place-items-center mb-4">
+            <div>
+              <%= image_tag level_part.icon.url, class:"h-auto max-w-full rounded-lg" %>
+            </div>
+            <div>
+              <p class="text-xl text-center"><%= t('.kind') %></p>
+              <p class="text-xl text-center"><%= t('.title') %> </p>
+              <p class="text-xl text-center"><%= level_part.level %>- <%= level_part.part %></p>
+            </div>
           </div>
-          <div>
-            <p class="text-xl text-center"><%= t('.title') %> </p>
-            <p class="text-xl text-center"><%= level_part.level %>- <%= level_part.part %></p>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

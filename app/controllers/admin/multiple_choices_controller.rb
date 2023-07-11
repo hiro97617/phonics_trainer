@@ -1,25 +1,17 @@
 class Admin::MultipleChoicesController < Admin::BaseController
-  def index
-  end
+  def index; end
 
-  def new
-  end
+  def new; end
 
-  def create
-  end
+  def create; end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
-  def destroy
-  end
-
+  def destroy; end
 
   private
 
@@ -30,7 +22,6 @@ class Admin::MultipleChoicesController < Admin::BaseController
       :image_cache_for_incorrect_choice_1, :image_for_incorrect_choice_2, :image_cache_for_incorrect_choice_2
     )
   end
-
 
   def check_multiple_choice
     @multiple_choice = MultipleChoice.find(params[:id])
