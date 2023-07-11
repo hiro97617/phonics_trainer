@@ -161,6 +161,11 @@ ja:
       goal: "めあて"
       point: "ポイント"
       point_description: "まずは大事なポイントをおさえよう！！"
+      about_characters: "文字・スペルについてのポイント"
+      big_char: "大文字のポイント:"
+      small_char: "小文字のポイント:"
+      about_sound: "音についてのポイント"
+      no_char_point: "なので、大文字・小文字のポイントもありません"
       listen: "下のマークを押して聞いてみよう！"
       plus: "プラス"
       plus_first_description: "下の動画やインスタにアクセスしよう！"
@@ -198,11 +203,27 @@ ja:
         create_multiple_choice_questions: "選択問題の新規作成"
         to_edit: "レベル・パートの編集へ"
     lessons:
+      new:
+        title: "レッスンの新規作成。Level-Part:%{level}-%{part}"
+      edit:
+        title: "レッスンの編集 Level-Part:%{level}-%{part}"
       index:
         title: "Level-Part:%{level}-%{part}のLesson"
         create: "新規作成ページへ"
       show:
-        title: "今回のポイント"
+        title: "学ぶこと"
+        goal: "めあて"
+        point: "ポイント"
+        point_description: "まずは大事なポイントをおさえよう！！"
+        about_characters: "文字・スペルについてのポイント"
+        big_char: "大文字 : "
+        small_char: "小文字 : "
+        about_sound: "音についてのポイント"
+        no_char_point: "なので、大文字・小文字のポイントもありません"
+        listen: "下のマークを押して聞いてみよう！"
+        plus: "プラス"
+        plus_first_description: "下の動画やインスタにアクセスしよう！"
+        plus_second_description: "説明を読んで、ビデオやインスタを見てね！"
     multiple_choice_questions:
       index:
         body: "答え"
