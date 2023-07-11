@@ -23,11 +23,12 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-gem 'mini_magick'
+
 gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
-gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'enum_help'
+gem 'fog-aws'
+gem 'mini_magick'
 
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -35,8 +36,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-byebug'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
@@ -59,9 +60,10 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'sorcery', '~> 0.16.3'
 gem 'rails-i18n', '~> 6.0'
 gem 'ransack'
+gem 'rubocop', require: false
+gem 'rubocop-rails', require: false
+gem 'sorcery', '~> 0.16.3'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'virtus'
-gem 'gon'

@@ -6,11 +6,10 @@ class Admin::UsersController < Admin::BaseController
     @users = @q.result(distinct: true)
   end
 
-
   def edit; end
 
   def update
-    if @user = User.update(user_params)
+    if @user.update(user_params)
       redirect_to admin_users_path
     else
       render :edit

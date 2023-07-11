@@ -37,7 +37,8 @@ class Admin::LessonsController < Admin::BaseController
   def update
     if @lesson.update(lesson_params)
       @lesson.points = @lesson.points.split(',')
-      redirect_to admin_level_part_lessons_path(level_part_id: @lesson.level_part.id), success: t('defaults.message.update', item: Lesson.model_name.human)
+      redirect_to admin_level_part_lessons_path(level_part_id: @lesson.level_part.id), success: t('defaults.message.update',
+        item: Lesson.model_name.human)
     else
       render :edit
     end
@@ -45,14 +46,15 @@ class Admin::LessonsController < Admin::BaseController
 
   def destroy
     @lesson.destroy!
-    flash.now[:success] = t('defaults.message.delete', item: Lesson.human_model.attribute )
+    flash.now[:success] = t('defaults.message.delete', item: Lesson.human_model.attribute)
     redirect_to admin_lessons_path
   end
 
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :description, :points, :audio, :alphabet_name, :vibrate, :sample_image, :big_char_point, :small_char_point).merge(level_part_id: params[:level_part_id] || @lesson.level_part.id )
+    params.require(:lesson).permit(:title, :description, :points, :audio, :alphabet_name, :vibrate,
+    :sample_image, :big_char_point, :small_char_point).merge(level_part_id: params[:level_part_id] || @lesson.level_part.id)
   end
 
   def set_lesson

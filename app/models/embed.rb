@@ -1,6 +1,6 @@
 class Embed < ApplicationRecord
   belongs_to :lesson
-  enum media_type:{
+  enum media_type: {
     youtube: 0,
     instagram: 1
   }

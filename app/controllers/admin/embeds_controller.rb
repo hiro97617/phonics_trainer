@@ -12,8 +12,7 @@ class Admin::EmbedsController < Admin::BaseController
     end
   end
 
-  def update
-  end
+  def update; end
 
   def destroy
     @embed.destroy!

@@ -13,12 +13,12 @@ class ApplicationController < ActionController::Base
     @locale ||= params[:locale] || I18n.default_locale
   end
 
-  def default_url_options(options={})
+  def default_url_options(options = {})
     options.merge(locale: locale)
   end
 
   def not_authenticated
-    redirect_to login_path, warning: "ログインをしてください"
+    redirect_to login_path, warning: t('defaults.message.please_login')
   end
 
   def move_to_dashboard

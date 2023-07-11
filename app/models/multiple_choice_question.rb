@@ -7,6 +7,6 @@ class MultipleChoiceQuestion < ApplicationRecord
   has_many :multiple_choice_judgements
 
   def next(level_part)
-    level_part.questions.where("id > ?", self.id).order("id ASC").first
+    level_part.questions.where('id > ?', self.id).order('id ASC').first
   end
 end

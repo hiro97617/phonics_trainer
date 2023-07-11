@@ -40,7 +40,7 @@ class AlphabetUploader < CarrierWave::Uploader::Base
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_allowlist
-    %w(wav aif mp3 wma)
+    %w[wav aif mp3 wma]
   end
 
   # Override the filename of the uploaded files:

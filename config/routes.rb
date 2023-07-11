@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
-
-  scope "(:locale)", locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
+  scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
     get 'outline', to: 'outlines#static_page'
     get 'explanation', to: 'explanations#static_page'
     get 'dashboard', to: 'dashboards#top'
@@ -11,10 +9,10 @@ Rails.application.routes.draw do
     root to: 'home#top'
     resource :profile, only: %i[show edit update]
     get 'multiple_choice_questions', to: 'multiple_choice_questions#top'
-    get 'lessons', to: "lessons#top"
+    get 'lessons', to: 'lessons#top'
     resources :users, only: %i[new create]
     resources :level_parts, only: %i[show] do
-      resources :multiple_choice_questions, only: %i[new create index show update], name_prefix: "multiple_choice_"
+      resources :multiple_choice_questions, only: %i[new create index show update], name_prefix: 'multiple_choice_'
       resources :lessons, only: %i[index]
       get 'multiple_choice/result', to: 'multiple_choice_questions#result_page'
     end
