@@ -5,6 +5,7 @@ ja:
       level_part: "レベル・パート"
       multiple_choice_question: "選択問題"
       lesson: "レッスン"
+      embed: "埋め込み"
     attributes:
       user:
         name: "ニックネーム"
@@ -28,3 +29,6 @@ ja:
         alphabet_name: "アルファベットの音"
         vibrate: "有声音か無声音か"
         points: "ポイント"
+      embed:
+        description: "説明"
+        media_url: "URL"

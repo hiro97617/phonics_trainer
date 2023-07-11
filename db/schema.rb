@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_05_010756) do
+ActiveRecord::Schema.define(version: 2023_07_10_050028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(version: 2023_07_05_010756) do
     t.string "title", null: false
     t.text "description"
     t.string "points", default: [], array: true
+    t.string "sample_image"
+    t.text "big_char_point"
+    t.text "small_char_point"
     t.index ["level_part_id"], name: "index_lessons_on_level_part_id"
   end
 

@@ -4,6 +4,7 @@ class Lesson < ApplicationRecord
   validates :title, presence: true
   mount_uploader :audio, AudioUploader
   mount_uploader :alphabet_name, AlphabetUploader
+  mount_uploader :sample_image, SampleCharacterUploader
   enum vibrate: {
     voiceless: 0,
     voiced: 1
