@@ -1,13 +1,13 @@
 <div id="multiple-choice-question-id-<%= multiple_choice_question.id %>">
   <tr>
     <td>
-      <%= multiple_choice_question.body %>
+      <%= multiple_choice_question&.body %>
     </td>
     <td>
-      <%= multiple_choice_question.multiple_choices[0].body %>
+      <%= multiple_choice_question&.multiple_choices[0]&.body %>
     </td>
     <td>
-      <%= multiple_choice_question.multiple_choices[1].body %>
+      <%= multiple_choice_question&.multiple_choices[1]&.body %>
     </td>
     <td>
       <% if multiple_choice_question.multiple_choices[2].present? %>
