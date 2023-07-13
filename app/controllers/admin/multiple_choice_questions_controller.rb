@@ -11,16 +11,17 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
   end
 
   def new
-    @register_multiple_choice_question_form = RegisterMultipleChoiceQuestionForm.new
+    @register_multiple_choice = RegisterMultipleChoiceQuestionForm.new
   end
 
   def create
-    @register_multiple_choice_question_form = RegisterMultipleChoiceQuestionForm.new(create_multiple_choice_question_params)
-    @register_multiple_choice_question_form.level_part_id = params[:level_part_id]
-    if @register_multiple_choice_question_form.save
-      redirect_to admin_level_part_multiple_choice_questions_path(@level_part), success: t('defaults.message.created', item:MultipleChoiceQuestion.model_name.human)
+    @register_multiple_choice = RegisterMultipleChoiceQuestionForm.new(multiple_choice_question_params)
+    @register_multiple_choice.level_part_id = params[:level_part_id]
+    if @register_multiple_choice.save
+      redirect_to admin_level_part_multiple_choice_questions_path(@level_part), success: t('defaults.message.created',
+                                                                                           item: MultipleChoiceQuestion.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_created', item:MultipleChoiceQuestion.model_name.human)
+      flash.now['danger'] = t('defaults.message.not_created', item: MultipleChoiceQuestion.model_name.human)
       render :new
     end
   end
@@ -28,24 +29,27 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
   def show; end
 
   def edit
-    @register_multiple_choice_question_form = RegisterMultipleChoiceQuestionForm.new(multiple_choice_question: @multiple_choice_question)
+    @register_multiple_choice = RegisterMultipleChoiceQuestionForm.new(multiple_choice_question:
+                                                                       @multiple_choice_question)
   end
 
   def update
-    @register_multiple_choice_question_form = RegisterMultipleChoiceQuestionForm.new(create_multiple_choice_question_params, multiple_choice_question: @multiple_choice_question)
-    if @register_multiple_choice_question_form.save
-      redirect_to admin_multiple_choice_questions_path, success: t('defaults.message.update', item:MultipleChoiceQuestion.model_name.human)
+    @register_multiple_choice = RegisterMultipleChoiceQuestionForm.new(multiple_choice_question_params,
+                                                                       multiple_choice_question: @multiple_choice_question)
+    if @register_multiple_choice.save
+      redirect_to admin_multiple_choice_questions_path, success: t('defaults.message.update',
+                                                                   item: MultipleChoiceQuestion.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_update', item:MultipleChoiceQuestion.model_name.human)
+      flash.now['danger'] = t('defaults.message.not_update', item: MultipleChoiceQuestion.model_name.human)
       render :edit
     end
   end
 
   def destroy
     @multiple_choice_question.destroy!
-    redirect_to admin_multiple_choice_top_path, success: t('defaults.message.deleted', item:MultipleChoiceQuestion.model_name.human)
+    redirect_to admin_multiple_choice_top_path, success: t('defaults.message.deleted',
+                                                           item: MultipleChoiceQuestion.model_name.human)
   end
-
 
   private
 
@@ -53,11 +57,11 @@ class Admin::MultipleChoiceQuestionsController < Admin::BaseController
     @level_part = LevelPart.find(params[:level_part_id])
   end
 
-  def create_multiple_choice_question_params
+  def multiple_choice_question_params
     params.require(:multiple_choice_question).permit(
-      :multiple_choice_question_body, :choice_1, :choice_2, :choice_3, :level_part_id,
-      :image_for_choice_1, :image_for_choice_1_cache, :image_for_choice_2, :image_for_choice_2_cache,
-      :image_for_choice_3, :image_for_choice_3_cache, :is_answer_1, :is_answer_2, :is_answer_3
+      :multiple_body, :choice1, :choice2, :choice3, :level_part_id,
+      :image_for_choice1, :image_for_choice_1_cache, :image_for_choice2, :image_for_choice_2_cache,
+      :image_for_choice3, :image_for_choice_3_cache, :is_answer1, :is_answer2, :is_answer3
     )
   end
 

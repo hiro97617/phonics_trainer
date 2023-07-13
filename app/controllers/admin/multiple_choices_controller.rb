@@ -16,10 +16,10 @@ class Admin::MultipleChoicesController < Admin::BaseController
   private
 
   def multiple_choice_questions_params
-    params.require(:register_multiple_choice_question_form).permit(
-      :multiple_choice_question_body, :level_part_id, :correct_choice, :incorrect_choice_1, :incorrect_choice_2,
-      :image_for_correct_choice, :image_cache_for_correct_choice, :image_for_incorrect_choice_1,
-      :image_cache_for_incorrect_choice_1, :image_for_incorrect_choice_2, :image_cache_for_incorrect_choice_2
+    params.require(:multiple_choice_question).permit(
+      :multiple_body, :choice1, :choice2, :choice3, :level_part_id,
+      :image_for_choice1, :image_for_choice_1_cache, :image_for_choice2, :image_for_choice_2_cache,
+      :image_for_choice3, :image_for_choice_3_cache, :is_answer1, :is_answer2, :is_answer3
     )
   end
 

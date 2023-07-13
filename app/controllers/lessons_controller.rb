@@ -1,5 +1,4 @@
 class LessonsController < ApplicationController
-
   def top
     @level_parts = LevelPart.all
   end

@@ -5,13 +5,13 @@ class MultipleChoiceJudgementsController < ApplicationController
     if @multiple_choice.is_answer
       @multiple_choice_judgement.correct!
       @multiple_choice_challenger.update_column(:score, @multiple_choice_challenger.score + 1)
-      redirect_to multiple_choice_question_answer_path(@multiple_choice_question)
     else
       @multiple_choice_judgement.incorrect!
-      redirect_to multiple_choice_question_answer_path(@multiple_choice_question)
     end
+    redirect_to multiple_choice_question_answer_path(@multiple_choice_question)
   end
 
+  private
 
   def set_judgement
     @multiple_choice_challenger = MultipleChoiceChallenger.where(user_id: current_user.id).last

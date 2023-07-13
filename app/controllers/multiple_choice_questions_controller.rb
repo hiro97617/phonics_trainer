@@ -11,11 +11,13 @@ class MultipleChoiceQuestionsController < ApplicationController
     @multiple_choice_challenger = current_user.multiple_choice_challengers.where(level_part_id: @level_part.id).last
   end
 
-  #ユーザーの記録が行われる
+  # ユーザーの記録が行われる
   def new; end
 
   def create
-    @multiple_choice_challenger = current_user.multiple_choice_challengers.create(level_part_id: @level_part.id, start_date: Time.current, score: 0)
+    @multiple_choice_challenger = current_user.multiple_choice_challengers.create(
+      level_part_id: @level_part.id, start_date: Time.current, score: 0
+    )
     redirect_to level_part_multiple_choice_question_path(@level_part, @level_part.multiple_choice_questions.first)
   end
 
@@ -32,7 +34,7 @@ class MultipleChoiceQuestionsController < ApplicationController
   end
 
   def update
-    @multiple_choice_challenger.update_columns(finish_date: Time.current)
+    @multiple_choice_challenger.update_column(finish_date: Time.current)
     redirect_to level_part_multiple_choice_result_path(@level_part)
   end
 
