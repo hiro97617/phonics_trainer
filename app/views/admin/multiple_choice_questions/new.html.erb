@@ -39,7 +39,7 @@
             <%= f.label :choice3 %>
             <div class="mt-2">
               <%= f.text_field :choice3, class:"block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
-              <%= f.file_field :choice3, onchange: 'previewImage()', accept: 'images/*', class: "mb-3" %>
+              <%= f.file_field :image_for_choice3, onchange: 'previewImage()', accept: 'images/*', class: "mb-3" %>
               <%= f.hidden_field :image_for_choice_3_cache %>
               <%= f.check_box :is_answer3, :as => :boolean %>
             </div>
