@@ -1,5 +1,3 @@
-
-
 function pronounce() {
   let word = document.getElementById('word').textContent
   let utterance = new SpeechSynthesisUtterance();
@@ -8,36 +6,29 @@ function pronounce() {
   speechSynthesis.speak(utterance)
 }
 
-function checkCorrectChoicePronounce() {
-  let word = document.getElementById('correct-choice-body').textContent
+function checkChoicePronounceFirst() {
+  let word = document.getElementById('choice-body1').textContent
   let utterance = new SpeechSynthesisUtterance();
   utterance.lang = 'en-US';
   utterance.text = word;
   speechSynthesis.speak(utterance)
 }
 
-function checkIncorrectChoicePronounce() {
-  let word = document.getElementById('incorrect-choice-body').textContent
+function checkChoicePronounceSecond() {
+  let word = document.getElementById('choice-body2').textContent
   let utterance = new SpeechSynthesisUtterance();
   utterance.lang = 'en-US';
   utterance.text = word;
   speechSynthesis.speak(utterance)
 }
 
-function showAnswer() {
-  const correct = document.getElementById("correct-choice")
-  correct.className = "bg-green-200 rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3"
-
-  const incorrect = document.getElementById("incorrect-choice")
-  incorrect.className = "bg-red-200 rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3"
-
-  const word = document.getElementById("word")
-  word.style.display = "block";
-
-};
-
-
-
+function checkChoicePronounceThird() {
+  let word = document.getElementById('choice-body3').textContent
+  let utterance = new SpeechSynthesisUtterance();
+  utterance.lang = 'en-US';
+  utterance.text = word;
+  speechSynthesis.speak(utterance)
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 const trigger = document.getElementById('sound')
@@ -47,28 +38,26 @@ if (trigger) {
     pronounce()
   }
 }
-const checkCorrectChoice = document.getElementById('correct-body-sound')
-if (checkCorrectChoice) {
-  checkCorrectChoice.addEventListener('click', checkCorrectChoicePronounce)
+const choiceFirst = document.getElementById('body-sound1')
+if (choiceFirst) {
+  choiceFirst.addEventListener('click', checkChoicePronounceFirst)
   speechSynthesis.onvoiceschanged = e => {
-    checkCorrectChoicePronounce()
+    checkChoicePronounceFirst()
   }
 }
-const checkIncorrectChoice = document.getElementById('incorrect-body-sound')
-if (checkIncorrectChoice){
-  checkIncorrectChoice.addEventListener('click', checkIncorrectChoicePronounce)
+const choiceSecond = document.getElementById('body-sound2')
+if (choiceSecond){
+  choiceSecond.addEventListener('click', checkChoicePronounceSecond)
   speechSynthesis.onvoiceschanged = e => {
-    checkIncorrectChoicePronounce()
+    checkChoicePronounceSecond()
   }
 }
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  const selectCorrect = document.getElementById("correct-choice");
-  selectCorrect.addEventListener('click', showAnswer)
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const selectIncorrect = document.getElementById("incorrect-choice");
-  selectIncorrect.addEventListener('click', showAnswer)
+const choiceThird = document.getElementById('body-sound3')
+if (choiceThird){
+  choiceThird.addEventListener('click', checkChoicePronounceThird)
+  speechSynthesis.onvoiceschanged = e => {
+    checkChoicePronounceThird()
+  }
+}
 });
