@@ -34,7 +34,7 @@ class MultipleChoiceQuestionsController < ApplicationController
   end
 
   def update
-    @multiple_choice_challenger.update_column(finish_date: Time.current)
+    @multiple_choice_challenger.update_columns(finish_date: Time.current)
     redirect_to level_part_multiple_choice_result_path(@level_part)
   end
 
