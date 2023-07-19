@@ -13,13 +13,13 @@
         </div>
       </div>
       <div id="js-choice-button-for-quiz-<%= @multiple_choice_question.id %>">
-        <div class="mx-auto grid gap-6 sm:w-5/12 sm:grid-cols-2 md:w-5/12 md:grid-cols-2 lg:w-10/12 lg:grid-cols-2">
+        <div class="mx-auto grid gap-6 sm:grid-cols-2 md:grid-cols-<%= @multiple_choice_question.multiple_choices.count %> lg:grid-cols-<%= @multiple_choice_question.multiple_choices.count %>">
           <% @multiple_choice_question.multiple_choices.each do |choice| %>
             <% if choice.is_answer %>
               <%= link_to multiple_choice_multiple_choice_judgements_path(choice), method: :post do %>
                 <div class="bg-white border border-black rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3">
                   <div class="mb-2 space-y-4">
-                    <h3 class="text-xl font-semibold text-center text-purple-900" id="correct-choice-body"><%= choice.body %></h3>
+                    <h3 class="text-xl font-semibold text-center text-purple-900"><%= choice.body %></h3>
                     <div>
                       <%= image_tag choice.image.url %>
                     </div>
@@ -28,7 +28,7 @@
               <% end %>
             <% else %>
               <%= link_to multiple_choice_multiple_choice_judgements_path(choice), method: :post do %>
-                <div class="bg-white border border-black rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3" id="incorrect-choice">
+                <div class="bg-white border border-black rounded-2xl shadow-xl px-3 py-3 sm:px-3 lg:px-3">
                   <div class="mb-2 space-y-4">
                     <h3 class="text-xl font-semibold text-center text-purple-900"><%= choice.body %> </h3>
                     <div>
