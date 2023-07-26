@@ -12,6 +12,8 @@ ja:
     search: "検索"
     see_results: "結果を見る！"
     profile: "プロフィールページ"
+    terms: "利用規約"
+    privacy_policy: "プライバシーポリシー"
     admin:
       sidebar:
         users: "ユーザー"

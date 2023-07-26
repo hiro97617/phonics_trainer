@@ -69,3 +69,5 @@ gem 'ransack'
 gem 'sorcery', '~> 0.16.3'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'virtus'
+gem 'high_voltage'
+gem "meta-tags"

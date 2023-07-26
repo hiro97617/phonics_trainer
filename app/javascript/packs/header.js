@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var navcontent = document.getElementById("nav-content");
   var navaction = document.getElementById("navAction");
   var toToggle = document.querySelectorAll(".toggleColour");
+  var whiteLogo = document.getElementById("js-header-white");
+  var orangeLogo = document.getElementById("js-header-orange");
 
   document.addEventListener("scroll", function () {
     /*Apply classes for slide in bar*/
@@ -16,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
       navaction.classList.add("gradient");
       navaction.classList.remove("text-gray-800");
       navaction.classList.add("text-white");
+      whiteLogo.classList.add("hidden");
+      whiteLogo.classList.remove("inline-block");
+      orangeLogo.classList.add("inline-block");
+      orangeLogo.classList.remove("hidden");
       //Use to switch toggleColour colours
       for (var i = 0; i < toToggle.length; i++) {
         toToggle[i].classList.add("text-gray-800");
@@ -30,6 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
       navaction.classList.add("bg-white");
       navaction.classList.remove("text-white");
       navaction.classList.add("text-gray-800");
+      whiteLogo.classList.add("inline-block");
+      whiteLogo.classList.remove("hidden");
+      orangeLogo.classList.add("hidden");
+      orangeLogo.classList.remove("inline-block");
       //Use to switch toggleColour colours
       for (var i = 0; i < toToggle.length; i++) {
         toToggle[i].classList.add("text-white");

@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
+    root to: 'home#top'
     get 'outline', to: 'outlines#static_page'
     get 'explanation', to: 'explanations#static_page'
+    get "/pages/*id" => 'pages#show', as: :static_page, format: false
     get 'dashboard', to: 'dashboards#top'
     get 'login', to: 'user_sessions#new', as: 'login'
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy', as: 'logout'
-    root to: 'home#top'
     resource :profile, only: %i[show edit update]
     get 'multiple_choice_questions', to: 'multiple_choice_questions#top'
     get 'lessons', to: 'lessons#top'
