@@ -99,6 +99,9 @@ en:
         title: "もう一種類のゲームを考え中です"
         first_line_sentence: "ここに説明文を入れたいです"
         second_line_sentence: "お楽しみに!!"
+  user_mailer:
+    reset_password_email:
+      subject: 'Reset Password'
   admin:
     users:
       index:

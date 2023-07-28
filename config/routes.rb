@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
     root to: 'home#top'
     get 'outline', to: 'outlines#static_page'
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
     get 'login', to: 'user_sessions#new', as: 'login'
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy', as: 'logout'
+    resources :password_resets, only: %i[new create edit update]
     resource :profile, only: %i[show edit update]
     get 'multiple_choice_questions', to: 'multiple_choice_questions#top'
     get 'lessons', to: 'lessons#top'
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
     resources :multiple_choices, only: %i[] do
       resources :multiple_choice_judgements, only: %i[create]
     end
+
     namespace :admin do
       root to: 'dashboards#index'
       resources :users, only: %i[index edit update destroy]
@@ -46,4 +49,5 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
