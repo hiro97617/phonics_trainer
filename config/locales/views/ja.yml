@@ -14,6 +14,7 @@ ja:
     profile: "プロフィールページ"
     terms: "利用規約"
     privacy_policy: "プライバシーポリシー"
+    title: 'PhonicsTrainer | スペルと音を楽しみ、英語学習をより楽しく'
     admin:
       sidebar:
         users: "ユーザー"
@@ -45,6 +46,10 @@ ja:
       submit:
         create: "作成する"
         update: "更新する"
+    mailer:
+      name: "%{item}様"
+      recreate_password: 'パスワード再発行のご依頼を受け付けました。'
+      use_link: 'こちらのリンクからパスワードの再発行を行ってください。'
   home:
     top:
       catch_copy:
@@ -178,6 +183,20 @@ ja:
       plus: "プラス"
       plus_first_description: "下の動画やインスタにアクセスしよう！"
       plus_second_description: "説明を読んで、ビデオやインスタを見てね！"
+  password_resets:
+    new:
+      title: 'パスワードリセットについて'
+      forget_password: 'パスワードを忘れた方へ：メールアドレスを入力してください'
+      remember: 'パスワードを覚えていたら'
+      to_login: 'ログインページへ'
+      submit: 'パスワードをリセットする'
+    create:
+      success: 'メールを送信しました'
+    edit:
+      title: 'パスワードリセット'
+  user_mailer:
+    reset_password_email:
+      subject: 'パスワードリセットの件について'
   admin:
     users:
       index:

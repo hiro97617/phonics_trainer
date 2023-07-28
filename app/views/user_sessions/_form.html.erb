@@ -6,7 +6,7 @@
   <div class="mt-4">
     <div class="flex justify-between">
       <%= f.label :password, User.human_attribute_name(:password) , class:"block text-gray-700 text-sm font-bold mb-2" %>
-      <a href="#" class="text-xs text-gray-500"><%= t('defaults.message.forget_password') %> </a>
+      <%= link_to t('defaults.message.forget_password'), new_password_reset_path, class:"text-xs text-gray-500" %> </a>
     </div>
     <%= f.password_field :password, class:"bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" %>
   </div>

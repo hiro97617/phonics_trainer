@@ -1,0 +1,29 @@
+<%= content_for(:title, t('.title')) %>
+
+<div class="bg-green-100">
+  <div class="my-7 bg-white rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700">
+    <div class="p-4 sm:p-7">
+      <div class="text-center">
+        <h1 class="block text-2xl font-bold text-gray-800 dark:text-white"><%= t('.title') %></h1>
+      </div>
+      <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="grid gap-y-4">
+          <div>
+            <%= f.label :email, User.human_attribute_name(:email), class:"block mb-2 text-sm text-gray-600 dark:text-gray-200" %>
+            <p class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"><%= @user.email %></p>
+          </div>
+          <div>
+            <%= f.label :password, User.human_attribute_name(:password), class:"block mb-2 text-sm text-gray-600 dark:text-gray-200" %>
+            <%= f.password_field :password, placeholder: t('defaults.message.password_minimum'), class:"block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" %>
+          </div>
+          <div>
+            <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation), class:"block mb-2 text-sm text-gray-600 dark:text-gray-200" %>
+            <%= f.password_field :password_confirmation, placeholder: t('defaults.message.same_password'), class:"block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" %>
+          </div>
+          <%= f.submit  class: "flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
