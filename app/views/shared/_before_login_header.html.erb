@@ -1,8 +1,10 @@
 <nav id="header" class="fixed w-full z-30 top-0 text-white">
   <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
     <div class="pl-4 flex items-center">
-      <%= image_tag 'logo/white_logo.png', id:"js-header-white", class:"inline-block"  %>
-      <%= image_tag 'logo/orange_logo.png', id:"js-header-orange", class: "hidden"  %>
+      <%= link_to root_path, data: { turbolinks: false } do %>
+        <%= image_tag 'logo/white_logo.png', id:"js-header-white", class:"inline-block"  %>
+        <%= image_tag 'logo/orange_logo.png', id:"js-header-orange", class: "hidden"  %>
+      <% end %>
     </div>
     <div class="block lg:hidden pr-4">
       <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
