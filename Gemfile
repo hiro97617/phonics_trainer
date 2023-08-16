@@ -73,3 +73,8 @@ gem 'virtus'
 gem 'high_voltage'
 gem "meta-tags"
 gem 'config'
+
+gem 'sitemap_generator'
+gem 'redis', '~> 5.0', '>= 5.0.7'
+gem 'sidekiq', '~> 7.1', '>= 7.1.2'
+gem 'sidekiq-cron'

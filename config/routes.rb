@@ -1,3 +1,6 @@
+require 'sidekiq/web'
+require 'sidekiq/cron/web'
+
 Rails.application.routes.draw do
 
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
@@ -50,4 +53,8 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
+  if Rails.env.development?
+    mount Sidekiq::Web, at: '/sidekiq'
+end
 end
