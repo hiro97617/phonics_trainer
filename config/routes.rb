@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
     root to: 'home#top'
+    get '/sitemap' => redirect('https://s3-ap-northeast-1.amazonaws.com/phonics-trainer/sitemaps/sitemap.xml.gz')
     get 'outline', to: 'outlines#static_page'
     get 'explanation', to: 'explanations#static_page'
     get "/pages/*id" => 'pages#show', as: :static_page, format: false

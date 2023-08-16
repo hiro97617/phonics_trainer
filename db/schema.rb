@@ -55,8 +55,6 @@ ActiveRecord::Schema.define(version: 2023_08_06_123848) do
     t.integer "score"
     t.datetime "start_date"
     t.datetime "finish_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["level_part_id"], name: "index_multiple_choice_challengers_on_level_part_id"
     t.index ["user_id"], name: "index_multiple_choice_challengers_on_user_id"
   end
