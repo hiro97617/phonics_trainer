@@ -21,12 +21,17 @@ RUN wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg |
     echo 'deb http://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list
 RUN set -x && apt-get update -y -qq && apt-get install -yq yarn
 
+ENV TZ=JST
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 
 WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 
 #bundle lock ~ bundle config 'test'は本番環境のデプロイ時に実行
+
 
 RUN gem install bundler && \
     #bundle lock --add-platform x86_64-linux && \

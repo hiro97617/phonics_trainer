@@ -21,7 +21,7 @@ module App
     config.i18n.available_locales = %i[ja en]
     config.i18n.default_locale = :ja
     config.autoload_paths += Dir.glob("#{config.root}/app/forms")
-
+    config.active_job.queue_adapter = :sidekiq
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

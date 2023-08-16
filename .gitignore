@@ -27,6 +27,8 @@ tmp/*
 
 /public/assets
 /public/uploads
+/public/sitemap.xml.gz
+/public/robots.txt
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
