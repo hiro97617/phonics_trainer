@@ -5,56 +5,26 @@
         <%= image_tag 'logo/orange_logo.png', id:"js-footer-orange" %>
       </div>
       <div class="flex-1">
-        <p class="uppercase text-gray-500 md:mb-6">Links</p>
-        <ul class="list-reset mb-6">
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
-          </li>
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
-          </li>
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Support</a>
-          </li>
-        </ul>
-      </div>
-      <div class="flex-1">
         <p class="uppercase text-gray-500 md:mb-6">Legal</p>
         <ul class="list-reset mb-6">
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+          <li class="mt-4 inline-block mr-2 md:block md:mr-0">
             <%= link_to t('defaults.terms'), static_page_path(id: 'terms'), class:"no-underline hover:underline text-gray-800 hover:text-pink-500" %>
           </li>
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+          <li class="mt-4 inline-block mr-2 md:block md:mr-0">
             <%= link_to t('defaults.privacy_policy'), static_page_path(id: 'privacy_policy'), class:"no-underline hover:underline text-gray-800 hover:text-pink-500" %>
           </li>
-        </ul>
-      </div>
-      <div class="flex-1">
-        <p class="uppercase text-gray-500 md:mb-6">Social</p>
-        <ul class="list-reset mb-6">
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Facebook</a>
-          </li>
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Linkedin</a>
-          </li>
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Twitter</a>
-          </li>
-        </ul>
-      </div>
-      <div class="flex-1">
-        <p class="uppercase text-gray-500 md:mb-6">Company</p>
-        <ul class="list-reset mb-6">
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Official Blog</a>
-          </li>
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a>
-          </li>
-          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
-          </li>
+          <% if I18n.locale.to_s == "ja" %>
+            <li class="mt-4 inline-block mr-2 md:block md:mr-0">
+              <%= link_to  t('defaults.contact_form'), "https://forms.gle/qbqcxD8DbkuCQjuj6", class:"no-underline hover:underline text-gray-800 hover:text-pink-500", target: :_blank, rel: "noopener noreferrer" %>
+            </li>
+          <% else %>
+            <li class="mt-4 inline-block mr-2 md:block md:mr-0">
+              <%= link_to t('defaults.contact_form'), "https://forms.gle/z4Jt3AzwxLWHEFWf9", class:"no-underline hover:underline text-gray-800 hover:text-pink-500", target: :_blank, rel: "noopener noreferrer" %>
+            </li>
+          <% end %>
+            <li class="mt-4 inline-block mr-2 md:block md:mr-0">
+              <p class="no-underline text-gray-800"><%= t('defaults.contact_description') %></p>
+            </li>
         </ul>
       </div>
     </div>
