@@ -14,6 +14,8 @@ ja:
     profile: "プロフィールページ"
     terms: "利用規約"
     privacy_policy: "プライバシーポリシー"
+    contact_form: "お問い合わせフォーム"
+    contact_description: "If you want to send form in English, please change language on the header"
     title: 'PhonicsTrainer | スペルと音を楽しみ、英語学習をより楽しく'
     admin:
       sidebar:

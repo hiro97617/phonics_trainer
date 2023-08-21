@@ -6,6 +6,30 @@ en:
     login: 'Login'
     register: 'Register'
     logout: 'Logout'
+    how_to_play: "How to play PhonicsTrainer"
+    games: "Games index"
+    videos: "Lessons index"
+    listen: "Listen to the two words and compare!"
+    search: "Search"
+    see_results: "Check the result!!"
+    profile: "Profile"
+    terms: "Terms of use"
+    privacy_policy: "Privacy Policy"
+    contact_form: "Contact Form"
+    contact_description: "日本語でフォームをお送りになる場合、ヘッダーで日本語を選択してください"
+    title: 'PhonicsTrainer | Enjoy spells and sounds, Enjoy English learning'
+    admin:
+      sidebar:
+        users: "ユーザー"
+        multiple_choice_questions: "選択問題"
+        matching_questions: "マッチング問題"
+        tags: "タグ"
+        level_parts: "レベル・パート"
+        videos: "ビデオ"
+        profile: "プロフィール"
+        training: "トレーニング一覧"
+        lessons: "レッスン一覧"
+        logout: "ログアウト"
     message:
       please_login: "Please login"
       created: "%{item} was successfully created"
@@ -54,11 +78,11 @@ en:
           title: 'What is PhonicsTrainer?'
           first_line_description: "For Japanese students learning English, it is important to notice the rules regarding phonics."
           second_line_description: "When they are around twelve(10 ~ 13), they should learn phonics with a lot of fun!! "
-          third_line_description: "それに役立つのが、「PhonicsTrainer」です!!"
-          fourth_line_description: "「PhonicsTrainer」では、ゲーム感覚で楽しく学べます!"
-          fifth_line_description: "またオススメ動画も紹介しているので気軽に触れられます！"
-          sixth_line_description: "少しずつ英語の音とスペルになれていきましょう！"
-          seventh_line_description: "そして、英語の勉強を楽しみましょう！"
+          third_line_description: "In this situation, PhonicsTrainer is useful!!"
+          fourth_line_description: "Through PhonicsTrainer, you can learn phonics like playing gaming applications"
+          fifth_line_description: "Also, some videos to learn phonics are introduced. That's helpful to teach and learn phonics."
+          sixth_line_description: "I hope more students will relieve to solve the problems of phonics and spelling."
+          seventh_line_description: "And, I hope more students will enjoy English Learning."
   users:
     new:
       title: 'New User'
