@@ -1,0 +1,9 @@
+en:
+  errors:
+    messages:
+      too_short:
+        one: "is too short (minimum is %{count} characters)"
+        # %{count}には動的な値が埋め込まれる
+        other: "is too short (minimum is %{count} characters)"
+      blank: "can't be blank"
+      taken: "has already been taken"
