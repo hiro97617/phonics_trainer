@@ -1,7 +1,7 @@
 <div class="w-full bg-yellow-100 py-8" >
   <p class="text-4xl text-center text-black">Level-Part:<%= @level_part.level %>-<%= @level_part.part %> </p>
   <div class="container m-auto px-8 py-6 bg-blue-100 border border-black w-5/12 my-12 text-gray-500 md:px-8 xl:px-0">
-    <p class="text-4xl text-center" id="title">Question</p>
+    <p class="sm:text-2xl md:text-3xl lg:text-4xl text-center" id="title">Question</p>
     <div id="judgement">
       <% if @judgement.correct? %>
         <%= render 'multiple_choice_questions/templates/correct_sign' %>
@@ -11,7 +11,7 @@
     </div>
     <div id="js-multiple-choice-answer-for-quiz-<%= @multiple_choice_question.id %>">
       <div class="grid grid-cols-1 place-items-center mb-4">
-        <p class="text-5xl text-center" id="word"><%= @multiple_choice_question.body %></p>
+        <p class="sm:text-2xl md:text-3xl lg:text-5xl text-center" id="word"><%= @multiple_choice_question.body %></p>
         <div id="sound" class="listening-sound">
           <svg class="h-16 w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div id="js-choice-button-for-quiz-<%= @multiple_choice_question.id %>">
-        <div class="mx-auto grid gap-6 sm:w-5/12 sm:grid-cols-2 md:w-5/12 md:grid-cols-<%= @multiple_choice_question.multiple_choices.count %> lg:w-10/12 lg:grid-cols-<%= @multiple_choice_question.multiple_choices.count %>">
+        <div class="mx-auto grid gap-6 sm:w-10/12 sm:grid-cols-2 md:w-10/12 md:grid-cols-<%= @multiple_choice_question.multiple_choices.count %> lg:w-10/12 lg:grid-cols-<%= @multiple_choice_question.multiple_choices.count %>">
           <% @multiple_choice_question.multiple_choices.each_with_index do |choice, i| %>
             <div class="choice<%= i + 1 %>" >
               <% if choice.is_answer %>
@@ -34,7 +34,7 @@
                     </div>
                   </div>
                   <div id="body-sound<%= i + 1 %>" class="m-4">
-                    <svg class="h-16 w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="sm:h-4 sm:w-4 md:h-8 md:w-8 lg:h-16 lg:w-16 text-center text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
                     </svg>
                   </div>
@@ -47,7 +47,7 @@
     <div class="w-full place-items-center">
       <% if @next.nil? %>
         <%= form_with url:level_part_multiple_choice_question_path(@level_part, @multiple_choice_question), method: :patch, local: true do |f| %>
-          <%= f.submit t('.finish'), class:"w-1/3 px-4 py-2 m-6 rounded-md text-lg font-medium border shadow focus:outline-none focus:ring transition text-yellow-600 bg-yellow-50 border-yellow-200 hover:bg-yellow-100 active:bg-yellow-200 focus:ring-yellow-300" %>
+          <%= f.submit t('.finish'), class:"sm:w-full md:w-1/2 lg:w-1/3 px-4 py-2 m-6 rounded-md sm:text-sm md:text-sm lg:text-lg font-medium border shadow focus:outline-none focus:ring transition text-yellow-600 bg-yellow-50 border-yellow-200 hover:bg-yellow-100 active:bg-yellow-200 focus:ring-yellow-300" %>
         <% end %>
       <% else %>
         <%= link_to t('.next_question') , level_part_multiple_choice_question_path(@level_part, @next), data: {"turbolinks" => false},  class:"w-full px-4 py-2 m-6 rounded-md text-lg font-medium border shadow focus:outline-none focus:ring transition text-yellow-600 bg-yellow-50 border-yellow-200 hover:bg-yellow-100 active:bg-yellow-200 focus:ring-yellow-300" %>
