@@ -14,6 +14,7 @@ import "./admin.js"
 import "./header.js"
 import "./common.js"
 import "./multiple_choice_question.js"
+import "./before_smartphone_header"
 
 Rails.start()
 Turbolinks.start()
