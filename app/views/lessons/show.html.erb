@@ -39,9 +39,6 @@
                     <th scope="col" class="border-2 border-black text-lg font-medium text-gray-900 px-6 py-4">
                       <%= t(Lesson.human_attribute_name(:audio)) %>
                     </th>
-                    <th scope="col" class="border-2 border-black text-lg font-medium text-gray-900 px-6 py-4">
-                      <%= t(Lesson.human_attribute_name(:alphabet_name)) %>
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -53,16 +50,7 @@
                       <% if @lesson.audio.file.nil? %>
                         <%= t('defaults.message.not_present', item: Embed.human_attribute_name(:audio) ) %>
                       <% else %>
-                        <p class="text-lg"><%= t('.listen') %></p>
-                        <%= audio_tag @lesson.audio.url %>
-                      <% end %>
-                    </td>
-                    <td class="border-2 border-black text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <% if @lesson.alphabet_name.file.nil? %>
-                        <%= t('defaults.message.not_present', item: Embed.human_attribute_name(:alphabet_name) ) %>
-                      <% else %>
-                        <p class="text-lg"><%= t('.listen') %></p>
-                        <%= audio_tag @lesson.alphabet_name.url %>
+                        <%= audio_tag(@lesson.audio.url, controls: true) %>
                       <% end %>
                     </td>
                   </tr>
